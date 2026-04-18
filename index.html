@@ -250,6 +250,7 @@
   .event-box.fc { background: var(--forecast-soft); border-left: 3px solid var(--forecast); }
   .event-box.fc.out { background: #f5f5f5; border-left-color: #bbb; color: var(--text-sub); }
   .event-box.ac { background: var(--actual-soft); border-left: 3px solid var(--actual); }
+  .event-box.ac.active { background: #ffebee; border-left-color: #c62828; border-left-width: 4px; }
   .event-box .date { font-weight: 700; }
   .event-box .sub { color: var(--text-sub); font-size: 11px; display: block; margin-top: 2px; }
   .event-box.empty { background: #fafbfc; color: var(--muted); font-style: italic; border-left: 3px solid #eee; }
@@ -635,15 +636,21 @@ function renderCards() {
     host.innerHTML = '<div class="empty">조건에 맞는 기관 카드가 없습니다.</div>';
     return;
   }
-  const regular = visible.filter(x => !x.c.irregular);
-  const irregular = visible.filter(x => x.c.irregular);
+  // 섹션 분리:
+  //   1. 정기 발주 예상 (주기 명확 + 정상)
+  //   2. 비정기 발주 예상 (파트별 분산)
+  //   3. 주기이탈/장기미발주 (참고용)
+  const inactive = visible.filter(x => x.c.stale || x.c.long_inactive);
+  const healthy  = visible.filter(x => !x.c.stale && !x.c.long_inactive);
+  const regular  = healthy.filter(x => !x.c.irregular);
+  const irregular = healthy.filter(x => x.c.irregular);
 
   const sections = [];
   if (regular.length) {
     sections.push(`
       <h3 class="section-heading">
         📅 정기 발주 예상 <span class="count">${regular.length}개</span>
-        <span class="desc">주기 기반 — 마지막 공고일 + 주기</span>
+        <span class="desc">연간 주기 명확 + 최근 활성 기관</span>
       </h3>
       <div class="cards-grid">${regular.map(({c, i}) => renderCard(c, i)).join('')}</div>
     `);
@@ -655,6 +662,15 @@ function renderCards() {
         <span class="desc">파트별 분산/불규칙 발주 — 과거 발주 월 패턴 기반</span>
       </h3>
       <div class="cards-grid">${irregular.map(({c, i}) => renderCard(c, i)).join('')}</div>
+    `);
+  }
+  if (inactive.length) {
+    sections.push(`
+      <h3 class="section-heading">
+        ⚠ 주기이탈·장기미발주 <span class="count">${inactive.length}개</span>
+        <span class="desc">오랫동안 발주 없음 — 참고용, 가능성 낮으나 올라올 수도</span>
+      </h3>
+      <div class="cards-grid">${inactive.map(({c, i}) => renderCard(c, i)).join('')}</div>
     `);
   }
   host.innerHTML = sections.join('');
@@ -673,11 +689,24 @@ function renderCard(c, idx) {
     : `<div class="event-box empty">예상 정보 없음</div>`;
 
   const acHtml = actuals.length
-    ? actuals.map(a => `
-        <div class="event-box ac">
-          <span class="date">${a.date}</span>
-          <span class="sub">${a.winner ? '낙찰: ' + fmt.esc(a.winner) : (a.name ? fmt.esc(a.name).slice(0, 40) : '정보 없음')}</span>
-        </div>`).join('')
+    ? actuals.map(a => {
+        let statusText = '';
+        if (a.closing_date) {
+          if (a.is_active) {
+            statusText = `<span style="color:#c62828;font-weight:700">마감 ${a.closing_date} (D-${a.days_to_close})</span>`;
+          } else {
+            statusText = `<span style="color:#9aa0a6">마감 ${a.closing_date} (지남)</span>`;
+          }
+        }
+        const secondaryText = a.winner
+          ? `낙찰: ${fmt.esc(a.winner)}`
+          : (a.name ? fmt.esc(a.name).slice(0, 40) : '');
+        return `
+        <div class="event-box ac ${a.is_active ? 'active' : ''}">
+          <span class="date">공고 ${a.date}</span>
+          <span class="sub">${statusText}${statusText && secondaryText ? ' · ' : ''}${secondaryText}</span>
+        </div>`;
+      }).join('')
     : `<div class="event-box empty">실제 공고 없음</div>`;
 
   const staleBadge = c.stale ? `<span class="stale-badge" title="주기의 1.5배 이상 공고 없음">⚠ 주기이탈</span>` : '';
