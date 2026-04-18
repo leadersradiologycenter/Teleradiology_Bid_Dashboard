@@ -116,6 +116,26 @@
   }
   .rec-date.in-window { background: var(--forecast); color: #fff; }
 
+  /* 금액 구간 뱃지 */
+  .amount-tier {
+    padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700;
+    border: 1px solid transparent; white-space: nowrap;
+  }
+  .tier-10b { background: #b71c1c; color: #fff; }  /* 10억+ */
+  .tier-5b  { background: #e65100; color: #fff; }  /* 5~10억 */
+  .tier-3b  { background: #f9a825; color: #000; }  /* 3~5억 */
+  .tier-1b  { background: #43a047; color: #fff; }  /* 1~3억 */
+  .tier-sub { background: #90a4ae; color: #fff; }  /* <1억 */
+  .tier-na  { background: #eceff1; color: #607d8b; border-color: #cfd8dc; } /* 데이터 없음 */
+
+  /* 카드 좌측 경계 색: 금액 티어별 */
+  .card[data-tier="10b"] { border-left: 4px solid #b71c1c; }
+  .card[data-tier="5b"]  { border-left: 4px solid #e65100; }
+  .card[data-tier="3b"]  { border-left: 4px solid #f9a825; }
+  .card[data-tier="1b"]  { border-left: 4px solid #43a047; }
+  .card[data-tier="sub"] { border-left: 4px solid #90a4ae; }
+  .card[data-tier="na"]  { border-left: 4px solid #eceff1; }
+
   /* 탭 */
   .tabs {
     display: flex; gap: 2px; padding: 0 24px; background: #fff;
@@ -288,6 +308,13 @@
     <button class="filter-btn" data-filter="저">저신뢰만</button>
     <button class="filter-btn" data-scope="forecast">예상 있음</button>
     <button class="filter-btn" data-scope="actual">실제 있음</button>
+    <span style="border-left: 1px solid #d3d6db; height:24px; margin: 0 4px;"></span>
+    <button class="filter-btn" data-tier="all">금액 전체</button>
+    <button class="filter-btn" data-tier="10b">10억+</button>
+    <button class="filter-btn" data-tier="5b">5~10억</button>
+    <button class="filter-btn" data-tier="3b">3~5억</button>
+    <button class="filter-btn" data-tier="1b">1~3억</button>
+    <button class="filter-btn" data-tier="sub"><1억</button>
   </div>
 </header>
 
@@ -356,9 +383,20 @@ const fmt = {
   esc: s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),
 };
 
+// 금액 티어 판정
+function amountTier(v) {
+  if (v == null) return {code: 'na', label: '정보없음'};
+  if (v >= 1e9)   return {code: '10b', label: '10억+'};
+  if (v >= 5e8)   return {code: '5b',  label: '5~10억'};
+  if (v >= 3e8)   return {code: '3b',  label: '3~5억'};
+  if (v >= 1e8)   return {code: '1b',  label: '1~3억'};
+  return               {code: 'sub', label: '<1억'};
+}
+
 let DATA = null;
 let filterTrust = 'all';
 let filterScope = null;  // 'forecast' | 'actual' | null
+let filterTier = 'all';  // 'all' | '10b' | '5b' | '3b' | '1b' | 'sub'
 let query = '';
 
 async function load() {
@@ -578,6 +616,10 @@ function cardMatches(c) {
   if (filterTrust !== 'all' && c.confidence !== filterTrust) return false;
   if (filterScope === 'forecast' && !(c.forecast && c.forecast.in_window)) return false;
   if (filterScope === 'actual' && c.actual_count_in_window <= 0) return false;
+  if (filterTier !== 'all') {
+    const tier = amountTier(c.avg_winner_amount);
+    if (tier.code !== filterTier) return false;
+  }
   if (query) {
     const blob = (c.org + ' ' + c.modality + ' ' + (c.past_winners||[]).map(w=>w.name).join(' ') + ' ' +
                   (c.actual||[]).map(a=>a.name||'').join(' ')).toLowerCase();
@@ -660,11 +702,15 @@ function renderCard(c, idx) {
     ? `반복월 ${(c.recurring_months || []).map(m => m + '월').join(', ') || '—'}`
     : `주기 ${c.cycle_months}개월`;
 
+  const tier = amountTier(c.avg_winner_amount);
+  const tierBadge = `<span class="amount-tier tier-${tier.code}" title="평균 낙찰가 기준">${tier.label}</span>`;
+
   return `
-    <div class="card ${c.stale ? 'stale' : ''}" onclick="openModal(${idx})">
+    <div class="card ${c.stale ? 'stale' : ''}" data-tier="${tier.code}" onclick="openModal(${idx})">
       <div class="card-head">
         <div class="card-title">
           <span class="badge trust-${c.confidence}">${c.confidence}</span>
+          ${tierBadge}
           ${staleBadge}
           ${irregularBadge}
           <strong>${fmt.esc(c.org)}</strong>
@@ -762,6 +808,17 @@ document.querySelectorAll('.filter-btn[data-scope]').forEach(btn => {
     renderCards();
   });
 });
+// 금액 티어 필터
+document.querySelectorAll('.filter-btn[data-tier]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn[data-tier]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    filterTier = btn.dataset.tier;
+    renderCards();
+  });
+});
+// 기본: "금액 전체" active
+document.querySelector('.filter-btn[data-tier="all"]').classList.add('active');
 
 load();
 </script>
