@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KONEPS 원격영상판독 입찰 예상 캘린더</title>
+<style>
+  * { box-sizing: border-box; }
+  :root {
+    --bg: #f5f6f8;
+    --card-bg: #fff;
+    --border: #e3e6ea;
+    --text: #1a1d21;
+    --text-sub: #5f6368;
+    --muted: #9aa0a6;
+    --accent: #1a73e8;
+    --accent-soft: #e8f0fe;
+    --forecast: #8e24aa;
+    --forecast-soft: #f3e5f5;
+    --actual: #0f9d58;
+    --actual-soft: #e6f4ea;
+    --high: #1e8e3e;
+    --mid: #f9ab00;
+    --low: #d93025;
+    --today: #d93025;
+  }
+  html, body { margin: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
+    background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.5;
+  }
+  header.top {
+    position: sticky; top: 0; z-index: 100; background: #fff;
+    padding: 14px 24px; border-bottom: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  header.top h1 { margin: 0 0 4px; font-size: 17px; font-weight: 700; }
+  header.top .meta { font-size: 12px; color: var(--text-sub); }
+  header.top .meta strong { color: var(--text); }
+  .controls { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  input[type="search"] {
+    flex: 1; min-width: 220px; padding: 7px 12px; border: 1px solid #d3d6db;
+    border-radius: 6px; font-size: 14px;
+  }
+  .filter-btn {
+    padding: 6px 12px; border: 1px solid #d3d6db; background: #fff; border-radius: 6px;
+    cursor: pointer; font-size: 13px; color: var(--text);
+  }
+  .filter-btn:hover { background: #f7f8fa; }
+  .filter-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  main { padding: 20px 24px 60px; max-width: 1400px; margin: 0 auto; }
+
+  /* 타임라인 */
+  .timeline {
+    position: relative; background: #fff; border: 1px solid var(--border);
+    border-radius: 10px; padding: 16px 20px; margin-bottom: 20px;
+    overflow-x: auto;
+  }
+  .timeline-track {
+    position: relative; height: 56px; min-width: 560px;
+    background: linear-gradient(90deg, var(--forecast-soft) 0%, var(--forecast-soft) 50%, var(--actual-soft) 50%, var(--actual-soft) 100%);
+    background-size: 100% 50%; background-repeat: no-repeat;
+    border-radius: 6px;
+  }
+  .timeline-ticks { position: absolute; inset: 0; }
+  .tick {
+    position: absolute; top: 0; bottom: 0; width: 1px; background: rgba(0,0,0,0.08);
+  }
+  .tick-label {
+    position: absolute; top: 100%; transform: translateX(-50%);
+    font-size: 11px; color: var(--text-sub); margin-top: 4px; white-space: nowrap;
+  }
+  .today-marker {
+    position: absolute; top: -4px; bottom: -4px; width: 2px;
+    background: var(--today); z-index: 5;
+  }
+  .today-marker::after {
+    content: '오늘'; position: absolute; top: -18px; left: 50%; transform: translateX(-50%);
+    font-size: 10px; color: var(--today); font-weight: 700; white-space: nowrap;
+  }
+  .event-dot {
+    position: absolute; width: 10px; height: 10px; border-radius: 50%;
+    transform: translate(-50%, -50%); cursor: pointer;
+    border: 2px solid #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  }
+  .event-dot.forecast { background: var(--forecast); top: 28%; }
+  .event-dot.actual { background: var(--actual); top: 72%; }
+  .event-dot:hover { transform: translate(-50%, -50%) scale(1.4); }
+  .timeline-legend { margin-top: 28px; display: flex; gap: 18px; font-size: 12px; color: var(--text-sub); }
+  .timeline-legend .dot {
+    display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px;
+    vertical-align: middle;
+  }
+
+  /* 카드 그리드 */
+  .cards-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 14px;
+  }
+  .empty {
+    grid-column: 1/-1; padding: 60px; text-align: center; color: var(--muted);
+    background: #fff; border: 1px dashed var(--border); border-radius: 10px;
+  }
+  .card {
+    background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px;
+    overflow: hidden; cursor: pointer; transition: box-shadow 0.15s, transform 0.15s;
+  }
+  .card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.08); transform: translateY(-1px); }
+  .card-head { padding: 12px 14px 10px; border-bottom: 1px solid #f1f3f4; }
+  .card-title { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .card-title strong { font-size: 15px; font-weight: 700; }
+  .modality-tag {
+    background: #f1f3f4; color: var(--text-sub); padding: 2px 8px; border-radius: 4px;
+    font-size: 11px; font-weight: 500;
+  }
+  .badge { padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700; }
+  .trust-유력 { background: #e6f4ea; color: var(--high); }
+  .trust-잠재 { background: #fef7e0; color: var(--mid); }
+  .trust-저 { background: #fce8e6; color: var(--low); }
+  .card-sub { margin-top: 4px; font-size: 12px; color: var(--text-sub); }
+
+  .card-body { display: flex; gap: 8px; padding: 10px 14px 14px; }
+  .event-col { flex: 1; min-width: 0; }
+  .event-col h4 {
+    margin: 0 0 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.4px;
+    text-transform: uppercase;
+  }
+  .event-col.forecast h4 { color: var(--forecast); }
+  .event-col.actual h4 { color: var(--actual); }
+  .event-box {
+    padding: 8px 10px; border-radius: 6px; font-size: 12px; margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .event-box.fc { background: var(--forecast-soft); border-left: 3px solid var(--forecast); }
+  .event-box.fc.out { background: #f5f5f5; border-left-color: #bbb; color: var(--text-sub); }
+  .event-box.ac { background: var(--actual-soft); border-left: 3px solid var(--actual); }
+  .event-box .date { font-weight: 700; }
+  .event-box .sub { color: var(--text-sub); font-size: 11px; display: block; margin-top: 2px; }
+  .event-box.empty { background: #fafbfc; color: var(--muted); font-style: italic; border-left: 3px solid #eee; }
+
+  /* 모달 */
+  .modal-backdrop {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 200;
+    display: none; align-items: center; justify-content: center; padding: 20px;
+  }
+  .modal-backdrop.open { display: flex; }
+  .modal {
+    background: #fff; border-radius: 12px; max-width: 720px; width: 100%;
+    max-height: 88vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+  .modal-head {
+    position: sticky; top: 0; background: #fff; padding: 16px 20px;
+    border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-start; gap: 10px;
+  }
+  .modal-head h2 { margin: 0; font-size: 18px; }
+  .modal-close {
+    background: none; border: none; cursor: pointer; font-size: 22px; color: var(--text-sub);
+    padding: 0 4px;
+  }
+  .modal-body { padding: 16px 20px 20px; }
+  .kv-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px 16px; margin-bottom: 16px;
+  }
+  .kv label { display: block; font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.4px; }
+  .kv span { font-size: 13px; font-weight: 600; }
+  .kv span.emphasis { color: var(--accent); }
+  .section-title { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.4px; margin: 14px 0 6px; }
+  .winners { display: flex; flex-wrap: wrap; gap: 4px; }
+  .tag { background: var(--accent-soft); color: var(--accent); padding: 3px 8px; border-radius: 4px; font-size: 12px; }
+  .tag .cnt { opacity: 0.7; font-weight: 600; margin-left: 3px; }
+  .history-list { margin: 0; padding: 0; list-style: none; }
+  .history-list li { padding: 8px 0; border-bottom: 1px solid #f1f3f4; font-size: 13px; }
+  .history-list li:last-child { border: none; }
+  .history-list .h-date { font-weight: 700; color: var(--accent); margin-right: 8px; }
+  .history-list .h-name { color: var(--text); }
+  .history-list .h-meta { display: block; margin-top: 2px; font-size: 11px; color: var(--text-sub); }
+  .history-list a { color: var(--accent); text-decoration: none; }
+  .history-list a:hover { text-decoration: underline; }
+  footer { text-align: center; padding: 20px; font-size: 11px; color: var(--muted); }
+</style>
+</head>
+<body>
+<header class="top">
+  <h1>KONEPS 원격영상판독 입찰 예상 캘린더</h1>
+  <div class="meta" id="meta">로딩 중…</div>
+  <div class="controls">
+    <input type="search" id="search" placeholder="기관명·모달리티·과거 낙찰자 검색">
+    <button class="filter-btn active" data-filter="all">전체</button>
+    <button class="filter-btn" data-filter="유력">유력만</button>
+    <button class="filter-btn" data-filter="잠재">잠재만</button>
+    <button class="filter-btn" data-filter="저">저신뢰만</button>
+    <button class="filter-btn" data-scope="forecast">예상 있음</button>
+    <button class="filter-btn" data-scope="actual">실제 있음</button>
+  </div>
+</header>
+
+<main>
+  <section class="timeline" id="timeline">
+    <div class="timeline-track" id="timeline-track">
+      <div class="timeline-ticks" id="timeline-ticks"></div>
+    </div>
+    <div class="timeline-legend">
+      <span><span class="dot" style="background:var(--forecast)"></span>예상 공고 (위)</span>
+      <span><span class="dot" style="background:var(--actual)"></span>실제 공고 (아래)</span>
+      <span><span class="dot" style="background:var(--today)"></span>오늘 기준선</span>
+    </div>
+  </section>
+
+  <div class="cards-grid" id="cards"></div>
+</main>
+
+<div class="modal-backdrop" id="modal">
+  <div class="modal" role="dialog">
+    <div class="modal-head">
+      <div>
+        <h2 id="modal-title"></h2>
+        <div class="card-sub" id="modal-sub"></div>
+      </div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<footer id="footer">데이터 소스: 공공데이터포털 나라장터 입찰공고/낙찰/계약 API · 매일 자동 갱신</footer>
+
+<script>
+const fmt = {
+  money: v => v == null ? '—' : (v >= 1e8 ? (v/1e8).toFixed(1) + '억원' : v >= 1e4 ? Math.round(v/1e4).toLocaleString() + '만원' : Math.round(v).toLocaleString() + '원'),
+  moneyFull: v => v == null ? '—' : Math.round(v).toLocaleString() + '원',
+  rate: v => v == null ? '—' : v.toFixed(2) + '%',
+  num: v => v == null ? '—' : (Math.round(v*10)/10).toLocaleString(),
+  date: s => s || '—',
+  esc: s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),
+};
+
+let DATA = null;
+let filterTrust = 'all';
+let filterScope = null;  // 'forecast' | 'actual' | null
+let query = '';
+
+async function load() {
+  try {
+    const res = await fetch('data/cards.json?v=' + Date.now());
+    DATA = await res.json();
+  } catch (e) {
+    document.getElementById('cards').innerHTML = '<div class="empty">데이터 로드 실패: ' + fmt.esc(e.message) + '</div>';
+    return;
+  }
+  renderMeta();
+  renderTimeline();
+  renderCards();
+}
+
+function renderMeta() {
+  const w = DATA.window;
+  const gen = DATA.generated_at.replace('T', ' ').slice(0, 16);
+  document.getElementById('meta').innerHTML =
+    `윈도우 <strong>${w.start} ~ ${w.end}</strong> (오늘 ±${w.lookback_days}일) · ` +
+    `총 <strong>${DATA.total_cards}</strong>개 기관 카드 · 갱신 ${gen}`;
+}
+
+function dateFrac(dateStr) {
+  const w = DATA.window;
+  const s = new Date(w.start).getTime();
+  const e = new Date(w.end).getTime();
+  const d = new Date(dateStr).getTime();
+  return Math.max(0, Math.min(1, (d - s) / (e - s)));
+}
+
+function renderTimeline() {
+  const track = document.getElementById('timeline-track');
+  const tickHost = document.getElementById('timeline-ticks');
+  // tick 클리어
+  tickHost.querySelectorAll('.tick, .tick-label').forEach(el => el.remove());
+  track.querySelectorAll('.event-dot, .today-marker').forEach(el => el.remove());
+
+  // 주차 tick (대략 8주)
+  const w = DATA.window;
+  const start = new Date(w.start);
+  const end = new Date(w.end);
+  const days = (end - start) / 86400000;
+  const step = Math.max(7, Math.round(days / 8));
+  for (let d = 0; d <= days; d += step) {
+    const frac = d / days;
+    const tick = document.createElement('div');
+    tick.className = 'tick';
+    tick.style.left = (frac * 100) + '%';
+    tickHost.appendChild(tick);
+    const dt = new Date(start.getTime() + d * 86400000);
+    const lbl = document.createElement('div');
+    lbl.className = 'tick-label';
+    lbl.style.left = (frac * 100) + '%';
+    lbl.textContent = (dt.getMonth()+1) + '/' + dt.getDate();
+    tickHost.appendChild(lbl);
+  }
+
+  // 오늘 마커
+  const today = document.createElement('div');
+  today.className = 'today-marker';
+  today.style.left = (dateFrac(DATA.today) * 100) + '%';
+  track.appendChild(today);
+
+  // 이벤트 도트
+  DATA.cards.forEach((c, i) => {
+    const fc = c.forecast;
+    if (fc && fc.in_window) {
+      const dot = document.createElement('div');
+      dot.className = 'event-dot forecast';
+      dot.style.left = (dateFrac(fc.date) * 100) + '%';
+      dot.title = `[예상] ${c.org} · ${fc.date}`;
+      dot.onclick = () => openModal(i);
+      track.appendChild(dot);
+    }
+    (c.actual || []).forEach(a => {
+      if (!a.date) return;
+      const f = dateFrac(a.date);
+      if (f < 0 || f > 1) return;
+      const dot = document.createElement('div');
+      dot.className = 'event-dot actual';
+      dot.style.left = (f * 100) + '%';
+      dot.title = `[실제] ${c.org} · ${a.date}${a.winner ? ' · ' + a.winner : ''}`;
+      dot.onclick = () => openModal(i);
+      track.appendChild(dot);
+    });
+  });
+}
+
+function cardMatches(c) {
+  if (filterTrust !== 'all' && c.confidence !== filterTrust) return false;
+  if (filterScope === 'forecast' && !(c.forecast && c.forecast.in_window)) return false;
+  if (filterScope === 'actual' && c.actual_count_in_window <= 0) return false;
+  if (query) {
+    const blob = (c.org + ' ' + c.modality + ' ' + (c.past_winners||[]).map(w=>w.name).join(' ') + ' ' +
+                  (c.actual||[]).map(a=>a.name||'').join(' ')).toLowerCase();
+    if (!blob.includes(query)) return false;
+  }
+  return true;
+}
+
+function renderCards() {
+  const host = document.getElementById('cards');
+  const visible = DATA.cards.map((c, i) => ({c, i})).filter(x => cardMatches(x.c));
+  if (visible.length === 0) {
+    host.innerHTML = '<div class="empty">조건에 맞는 기관 카드가 없습니다.</div>';
+    return;
+  }
+  host.innerHTML = visible.map(({c, i}) => renderCard(c, i)).join('');
+}
+
+function renderCard(c, idx) {
+  const fc = c.forecast;
+  const actuals = c.actual || [];
+  const fcHtml = fc
+    ? `<div class="event-box fc${fc.in_window ? '' : ' out'}">
+         <span class="date">${fc.date}</span>
+         <span class="sub">${fc.in_window
+            ? (fc.days_from_today >= 0 ? `D-${fc.days_from_today}` : `${-fc.days_from_today}일 전`)
+            : `윈도우 밖 (${fc.days_from_today > 0 ? 'D-' + fc.days_from_today : Math.abs(fc.days_from_today)+'일 전'})`}</span>
+       </div>`
+    : `<div class="event-box empty">예상 정보 없음</div>`;
+
+  const acHtml = actuals.length
+    ? actuals.map(a => `
+        <div class="event-box ac">
+          <span class="date">${a.date}</span>
+          <span class="sub">${a.winner ? '낙찰: ' + fmt.esc(a.winner) : (a.name ? fmt.esc(a.name).slice(0, 40) : '정보 없음')}</span>
+        </div>`).join('')
+    : `<div class="event-box empty">실제 공고 없음</div>`;
+
+  return `
+    <div class="card" onclick="openModal(${idx})">
+      <div class="card-head">
+        <div class="card-title">
+          <span class="badge trust-${c.confidence}">${c.confidence}</span>
+          <strong>${fmt.esc(c.org)}</strong>
+          <span class="modality-tag">${fmt.esc(c.modality || '미분류')}</span>
+        </div>
+        <div class="card-sub">
+          공고 ${c.total_bids}회 · 주기 ${fmt.num(c.cycle_months)}개월 · 평균 낙찰 ${fmt.money(c.avg_winner_amount)} (${fmt.rate(c.avg_rate)})
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="event-col forecast">
+          <h4>🔮 예상</h4>
+          ${fcHtml}
+        </div>
+        <div class="event-col actual">
+          <h4>📋 실제 ${c.actual_count_in_window > 0 ? '(윈도우내 ' + c.actual_count_in_window + ')' : ''}</h4>
+          ${acHtml}
+        </div>
+      </div>
+    </div>`;
+}
+
+function openModal(idx) {
+  const c = DATA.cards[idx];
+  document.getElementById('modal-title').innerHTML =
+    `<span class="badge trust-${c.confidence}">${c.confidence}</span> ${fmt.esc(c.org)} <span class="modality-tag">${fmt.esc(c.modality)}</span>`;
+  document.getElementById('modal-sub').textContent =
+    `최초 ${c.first_date} ~ 최근 ${c.last_date} · 공고 ${c.total_bids}회 · 주기 ${fmt.num(c.cycle_months)}개월`;
+
+  const winners = (c.past_winners || []).map(w =>
+    `<span class="tag">${fmt.esc(w.name)}<span class="cnt">×${w.count}</span></span>`).join('') ||
+    '<span style="color:var(--muted)">기록 없음</span>';
+
+  const history = (c.history || []).map(h => {
+    const winMeta = h.winner ? ` · 낙찰 <strong>${fmt.esc(h.winner)}</strong>` +
+      (h.winner_amount ? ` · ${fmt.moneyFull(h.winner_amount)}` : '') +
+      (h.winner_rate ? ` (${fmt.rate(h.winner_rate)})` : '') : '';
+    const link = h.url ? `<a href="${fmt.esc(h.url)}" target="_blank" rel="noopener">원문 ↗</a>` : '';
+    return `
+      <li>
+        <span class="h-date">${h.date}</span>
+        <span class="h-name">${fmt.esc((h.name || h.name_raw || '').slice(0, 80))}</span>
+        <span class="h-meta">추정 ${fmt.moneyFull(h.price_est)}${winMeta} ${link}</span>
+      </li>`;
+  }).join('') || '<li style="color:var(--muted)">이력 없음</li>';
+
+  document.getElementById('modal-body').innerHTML = `
+    <div class="kv-grid">
+      <div class="kv"><label>평균 추정가격</label><span>${fmt.moneyFull(c.avg_price_est)}</span></div>
+      <div class="kv"><label>평균 낙찰금액</label><span class="emphasis">${fmt.moneyFull(c.avg_winner_amount)}</span></div>
+      <div class="kv"><label>평균 낙찰률</label><span>${fmt.rate(c.avg_rate)}</span></div>
+      <div class="kv"><label>평균 참가업체수</label><span>${fmt.num(c.avg_participants)}</span></div>
+      <div class="kv"><label>발주 주기</label><span>${fmt.num(c.cycle_months)}개월</span></div>
+      <div class="kv"><label>연평균 공고</label><span>${fmt.num(c.annual_freq)}건/년</span></div>
+    </div>
+    <div class="section-title">과거 낙찰자 (상위 10)</div>
+    <div class="winners">${winners}</div>
+    <div class="section-title">최근 이력 (최대 10건)</div>
+    <ul class="history-list">${history}</ul>
+  `;
+  document.getElementById('modal').classList.add('open');
+}
+
+function closeModal() { document.getElementById('modal').classList.remove('open'); }
+document.getElementById('modal').addEventListener('click', e => {
+  if (e.target.id === 'modal') closeModal();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// 필터 이벤트
+document.getElementById('search').addEventListener('input', e => {
+  query = e.target.value.trim().toLowerCase();
+  renderCards();
+});
+document.querySelectorAll('.filter-btn[data-filter]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn[data-filter]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    filterTrust = btn.dataset.filter;
+    renderCards();
+  });
+});
+document.querySelectorAll('.filter-btn[data-scope]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (filterScope === btn.dataset.scope) {
+      filterScope = null; btn.classList.remove('active');
+    } else {
+      document.querySelectorAll('.filter-btn[data-scope]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterScope = btn.dataset.scope;
+    }
+    renderCards();
+  });
+});
+
+load();
+</script>
+</body>
+</html>
