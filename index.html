@@ -96,6 +96,25 @@
   .cards-grid {
     display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 14px;
   }
+  .section-heading {
+    margin: 24px 0 12px; font-size: 15px; font-weight: 700; color: var(--text);
+    padding-bottom: 6px; border-bottom: 2px solid var(--border);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-heading .count { color: var(--text-sub); font-weight: 500; font-size: 13px; }
+  .section-heading .desc { color: var(--muted); font-weight: 400; font-size: 12px; margin-left: 8px; }
+  .irregular-badge {
+    background: #fff3e0; color: #e65100; padding: 2px 8px; border-radius: 10px;
+    font-size: 11px; font-weight: 600; border: 1px solid #ffe0b2;
+  }
+  .recurring-list {
+    display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px;
+  }
+  .rec-date {
+    background: #fff3e0; color: #e65100; padding: 3px 8px; border-radius: 4px;
+    font-size: 11px; font-weight: 600;
+  }
+  .rec-date.in-window { background: var(--forecast); color: #fff; }
   .empty {
     grid-column: 1/-1; padding: 60px; text-align: center; color: var(--muted);
     background: #fff; border: 1px dashed var(--border); border-radius: 10px;
@@ -213,7 +232,7 @@
     </div>
   </section>
 
-  <div class="cards-grid" id="cards"></div>
+  <div id="cards-container"></div>
 </main>
 
 <div class="modal-backdrop" id="modal">
@@ -346,13 +365,35 @@ function cardMatches(c) {
 }
 
 function renderCards() {
-  const host = document.getElementById('cards');
+  const host = document.getElementById('cards-container');
   const visible = DATA.cards.map((c, i) => ({c, i})).filter(x => cardMatches(x.c));
   if (visible.length === 0) {
     host.innerHTML = '<div class="empty">조건에 맞는 기관 카드가 없습니다.</div>';
     return;
   }
-  host.innerHTML = visible.map(({c, i}) => renderCard(c, i)).join('');
+  const regular = visible.filter(x => !x.c.irregular);
+  const irregular = visible.filter(x => x.c.irregular);
+
+  const sections = [];
+  if (regular.length) {
+    sections.push(`
+      <h3 class="section-heading">
+        📅 정기 발주 예상 <span class="count">${regular.length}개</span>
+        <span class="desc">주기 기반 — 마지막 공고일 + 주기</span>
+      </h3>
+      <div class="cards-grid">${regular.map(({c, i}) => renderCard(c, i)).join('')}</div>
+    `);
+  }
+  if (irregular.length) {
+    sections.push(`
+      <h3 class="section-heading">
+        🔀 비정기 발주 예상 <span class="count">${irregular.length}개</span>
+        <span class="desc">파트별 분산/불규칙 발주 — 과거 발주 월 패턴 기반</span>
+      </h3>
+      <div class="cards-grid">${irregular.map(({c, i}) => renderCard(c, i)).join('')}</div>
+    `);
+  }
+  host.innerHTML = sections.join('');
 }
 
 function renderCard(c, idx) {
@@ -376,21 +417,41 @@ function renderCard(c, idx) {
     : `<div class="event-box empty">실제 공고 없음</div>`;
 
   const staleBadge = c.stale ? `<span class="stale-badge" title="주기의 1.5배 이상 공고 없음">⚠ 주기이탈</span>` : '';
+  const irregularBadge = c.irregular ? `<span class="irregular-badge" title="여러 월에 분산 발주">🔀 비정기</span>` : '';
   const staleNote = c.stale
     ? `<div class="card-sub"><span class="warn">⚠ 마지막 공고 후 ${fmt.num(c.months_since_last)}개월 경과</span> (원신뢰도 ${c.raw_confidence || '—'} → ${c.confidence}로 강등)</div>`
     : '';
+
+  // 비정기 기관: 반복월 예상일 리스트 표시
+  let recurringHtml = '';
+  if (c.irregular && c.recurring_dates && c.recurring_dates.length) {
+    const winStart = DATA.window.start;
+    const winEnd = DATA.window.end;
+    const items = c.recurring_dates.map(rd => {
+      const inWin = rd.date >= winStart && rd.date <= winEnd;
+      return `<span class="rec-date ${inWin ? 'in-window' : ''}" title="과거 ${rd.past_count}회 발주">${rd.date.slice(5)} (${rd.past_count}회)</span>`;
+    }).join('');
+    recurringHtml = `<div class="card-sub">예상 월: <div class="recurring-list">${items}</div></div>`;
+  }
+
+  const cycleText = c.irregular
+    ? `반복월 ${(c.recurring_months || []).map(m => m + '월').join(', ') || '—'}`
+    : `주기 ${c.cycle_months}개월`;
+
   return `
     <div class="card ${c.stale ? 'stale' : ''}" onclick="openModal(${idx})">
       <div class="card-head">
         <div class="card-title">
           <span class="badge trust-${c.confidence}">${c.confidence}</span>
           ${staleBadge}
+          ${irregularBadge}
           <strong>${fmt.esc(c.org)}</strong>
           <span class="modality-tag">${fmt.esc(c.modality || '미분류')}</span>
         </div>
         <div class="card-sub">
-          공고 ${c.total_bids}회 · 주기 ${c.cycle_months}개월 · 평균 낙찰 ${fmt.money(c.avg_winner_amount)} (${fmt.rate(c.avg_rate)})
+          공고 ${c.total_bids}회 · ${cycleText} · 평균 낙찰 ${fmt.money(c.avg_winner_amount)} (${fmt.rate(c.avg_rate)})
         </div>
+        ${recurringHtml}
         ${staleNote}
       </div>
       <div class="card-body">
