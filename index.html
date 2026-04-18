@@ -115,6 +115,77 @@
     font-size: 11px; font-weight: 600;
   }
   .rec-date.in-window { background: var(--forecast); color: #fff; }
+
+  /* 탭 */
+  .tabs {
+    display: flex; gap: 2px; padding: 0 24px; background: #fff;
+    border-bottom: 1px solid var(--border); position: sticky; top: 54px; z-index: 90;
+  }
+  .tab {
+    padding: 10px 18px; border: none; background: none; cursor: pointer;
+    font-size: 14px; color: var(--text-sub); border-bottom: 2px solid transparent;
+    font-weight: 500;
+  }
+  .tab:hover { color: var(--text); }
+  .tab.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 700; }
+  .tab-pane { display: none; }
+  .tab-pane.active { display: block; }
+
+  /* 전체 기관 테이블 */
+  .orgs-table {
+    width: 100%; border-collapse: collapse; background: #fff;
+    border: 1px solid var(--border); border-radius: 10px; overflow: hidden;
+    font-size: 13px;
+  }
+  .orgs-table th {
+    background: #f7f8fa; padding: 10px 12px; text-align: left;
+    border-bottom: 1px solid var(--border); font-weight: 600; cursor: pointer;
+    user-select: none; white-space: nowrap;
+  }
+  .orgs-table th:hover { background: #eef0f3; }
+  .orgs-table td {
+    padding: 8px 12px; border-bottom: 1px solid #f1f3f4;
+    white-space: nowrap;
+  }
+  .orgs-table tr:hover td { background: #fafbfc; }
+  .orgs-table tr:last-child td { border-bottom: none; }
+  .orgs-table .org-name { font-weight: 600; cursor: pointer; color: var(--accent); }
+  .orgs-table .org-name:hover { text-decoration: underline; }
+  .orgs-table .flags { display: flex; gap: 3px; }
+  .orgs-table .flag-sm {
+    font-size: 10px; padding: 1px 5px; border-radius: 3px; font-weight: 600;
+  }
+  .flag-stale { background: #fce8e6; color: var(--low); }
+  .flag-long { background: #fff3e0; color: #e65100; }
+  .flag-irreg { background: #e8eaf6; color: #3f51b5; }
+
+  /* 월별 타임라인 */
+  .month-blocks { display: flex; flex-direction: column; gap: 16px; }
+  .month-block {
+    background: #fff; border: 1px solid var(--border); border-radius: 10px;
+    overflow: hidden;
+  }
+  .month-block-head {
+    padding: 12px 16px; background: linear-gradient(to right, #eef2ff, #fff);
+    border-bottom: 1px solid var(--border); display: flex;
+    justify-content: space-between; align-items: center;
+  }
+  .month-block-head h4 { margin: 0; font-size: 16px; font-weight: 700; color: var(--accent); }
+  .month-block-head .cnt { color: var(--text-sub); font-size: 13px; }
+  .month-block.empty .month-block-head { background: #fafbfc; }
+  .month-block.empty .month-block-head h4 { color: var(--muted); }
+  .month-entries { padding: 8px; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 6px; }
+  .month-entry {
+    padding: 8px 10px; border-radius: 6px; background: #f7f8fa;
+    font-size: 12px; cursor: pointer; border-left: 3px solid var(--forecast);
+  }
+  .month-entry:hover { background: #eef2ff; }
+  .month-entry.type-실제 { border-left-color: var(--actual); }
+  .month-entry.type-비정기 { border-left-color: #ff9800; }
+  .month-entry .entry-org { font-weight: 600; display: block; color: var(--text); }
+  .month-entry .entry-meta { font-size: 11px; color: var(--text-sub); margin-top: 2px; }
+  .month-entry .entry-date { color: var(--accent); font-weight: 600; }
+  .empty-month { padding: 16px; text-align: center; color: var(--muted); font-size: 12px; font-style: italic; }
   .empty {
     grid-column: 1/-1; padding: 60px; text-align: center; color: var(--muted);
     background: #fff; border: 1px dashed var(--border); border-radius: 10px;
@@ -209,7 +280,7 @@
 <header class="top">
   <h1>KONEPS 원격영상판독 입찰 예상 캘린더</h1>
   <div class="meta" id="meta">로딩 중…</div>
-  <div class="controls">
+  <div class="controls" id="dashboard-controls">
     <input type="search" id="search" placeholder="기관명·모달리티·과거 낙찰자 검색">
     <button class="filter-btn active" data-filter="all">전체</button>
     <button class="filter-btn" data-filter="유력">유력만</button>
@@ -220,19 +291,44 @@
   </div>
 </header>
 
-<main>
-  <section class="timeline" id="timeline">
-    <div class="timeline-track" id="timeline-track">
-      <div class="timeline-ticks" id="timeline-ticks"></div>
-    </div>
-    <div class="timeline-legend">
-      <span><span class="dot" style="background:var(--forecast)"></span>예상 공고 (위)</span>
-      <span><span class="dot" style="background:var(--actual)"></span>실제 공고 (아래)</span>
-      <span><span class="dot" style="background:var(--today)"></span>오늘 기준선</span>
-    </div>
-  </section>
+<div class="tabs">
+  <button class="tab active" data-tab="dashboard">📊 대시보드 <span id="tab-cnt-dashboard"></span></button>
+  <button class="tab" data-tab="all-orgs">🏥 전체 기관 <span id="tab-cnt-all-orgs"></span></button>
+  <button class="tab" data-tab="monthly">🗓 월별 타임라인</button>
+</div>
 
-  <div id="cards-container"></div>
+<main>
+  <!-- 탭 1: 대시보드 -->
+  <div class="tab-pane active" id="tab-dashboard">
+    <section class="timeline" id="timeline">
+      <div class="timeline-track" id="timeline-track">
+        <div class="timeline-ticks" id="timeline-ticks"></div>
+      </div>
+      <div class="timeline-legend">
+        <span><span class="dot" style="background:var(--forecast)"></span>예상 공고 (위)</span>
+        <span><span class="dot" style="background:var(--actual)"></span>실제 공고 (아래)</span>
+        <span><span class="dot" style="background:var(--today)"></span>오늘 기준선</span>
+      </div>
+    </section>
+    <div id="cards-container"></div>
+  </div>
+
+  <!-- 탭 2: 전체 기관 -->
+  <div class="tab-pane" id="tab-all-orgs">
+    <div class="controls" style="margin-bottom: 14px;">
+      <input type="search" id="orgs-search" placeholder="기관명 검색" style="flex:1; min-width:220px; padding:7px 12px; border:1px solid #d3d6db; border-radius:6px;">
+      <button class="filter-btn active" data-orgs-filter="all">전체</button>
+      <button class="filter-btn" data-orgs-filter="active">최근1년 활성</button>
+      <button class="filter-btn" data-orgs-filter="stale">주기이탈</button>
+      <button class="filter-btn" data-orgs-filter="irregular">비정기</button>
+    </div>
+    <div id="all-orgs-table-host"></div>
+  </div>
+
+  <!-- 탭 3: 월별 타임라인 -->
+  <div class="tab-pane" id="tab-monthly">
+    <div class="month-blocks" id="month-blocks"></div>
+  </div>
 </main>
 
 <div class="modal-backdrop" id="modal">
@@ -270,12 +366,138 @@ async function load() {
     const res = await fetch('data/cards.json?v=' + Date.now());
     DATA = await res.json();
   } catch (e) {
-    document.getElementById('cards').innerHTML = '<div class="empty">데이터 로드 실패: ' + fmt.esc(e.message) + '</div>';
+    document.getElementById('cards-container').innerHTML = '<div class="empty">데이터 로드 실패: ' + fmt.esc(e.message) + '</div>';
     return;
   }
   renderMeta();
   renderTimeline();
   renderCards();
+  renderAllOrgs();
+  renderMonthly();
+  // 탭 카운트
+  document.getElementById('tab-cnt-dashboard').textContent = '(' + DATA.total_cards + ')';
+  document.getElementById('tab-cnt-all-orgs').textContent = '(' + (DATA.all_orgs || []).length + ')';
+}
+
+// 탭 전환
+document.querySelectorAll('.tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    // 대시보드 필터는 대시보드 탭에만 관련
+    document.getElementById('dashboard-controls').style.display = btn.dataset.tab === 'dashboard' ? 'flex' : 'none';
+  });
+});
+
+// 전체 기관 테이블 렌더링
+let orgsFilter = 'all';
+let orgsQuery = '';
+let orgsSort = {key: 'next_forecast', asc: true};
+
+function renderAllOrgs() {
+  const host = document.getElementById('all-orgs-table-host');
+  const orgs = (DATA.all_orgs || []).filter(o => {
+    if (orgsQuery && !o.org.toLowerCase().includes(orgsQuery)) return false;
+    if (orgsFilter === 'active' && (o.months_since_last || 0) > 12) return false;
+    if (orgsFilter === 'stale' && !o.stale) return false;
+    if (orgsFilter === 'irregular' && !o.irregular) return false;
+    return true;
+  });
+  orgs.sort((a, b) => {
+    const k = orgsSort.key;
+    let va = a[k], vb = b[k];
+    if (va == null) va = orgsSort.asc ? '~' : '';
+    if (vb == null) vb = orgsSort.asc ? '~' : '';
+    if (typeof va === 'number') return orgsSort.asc ? va - vb : vb - va;
+    return orgsSort.asc ? String(va).localeCompare(String(vb)) : String(vb).localeCompare(String(va));
+  });
+
+  const rows = orgs.map(o => {
+    const flags = [
+      o.stale ? '<span class="flag-sm flag-stale" title="주기이탈">⚠</span>' : '',
+      o.long_inactive ? '<span class="flag-sm flag-long" title="2년+ 미발주">📅</span>' : '',
+      o.irregular ? '<span class="flag-sm flag-irreg" title="비정기 발주">🔀</span>' : '',
+    ].filter(Boolean).join('');
+    return `<tr>
+      <td><span class="org-name" onclick="openModalByOrg('${fmt.esc(o.org)}')">${fmt.esc(o.org)}</span> <span class="flags">${flags}</span></td>
+      <td>${fmt.esc(o.modality || '—')}</td>
+      <td>${o.total_bids}</td>
+      <td>${o.cycle_months || '—'}</td>
+      <td>${o.last_date}</td>
+      <td>${fmt.num(o.months_since_last)}</td>
+      <td>${o.next_forecast}</td>
+      <td><span class="badge trust-${o.confidence}">${o.confidence}</span></td>
+      <td>${fmt.money(o.avg_winner_amount)}</td>
+      <td>${fmt.rate(o.avg_rate)}</td>
+    </tr>`;
+  }).join('');
+
+  const headers = [
+    ['org', '기관명'], ['modality', '모달리티'], ['total_bids', '공고수'],
+    ['cycle_months', '주기(개월)'], ['last_date', '마지막공고'], ['months_since_last', '경과(월)'],
+    ['next_forecast', '다음예상'], ['confidence', '신뢰도'],
+    ['avg_winner_amount', '평균낙찰'], ['avg_rate', '평균률'],
+  ];
+  const thead = headers.map(([k, l]) => {
+    const arrow = orgsSort.key === k ? (orgsSort.asc ? ' ↑' : ' ↓') : '';
+    return `<th onclick="sortOrgs('${k}')">${l}${arrow}</th>`;
+  }).join('');
+
+  host.innerHTML = `<div style="font-size:12px; color:var(--text-sub); margin-bottom:8px;">${orgs.length}개 기관 표시 (전체 ${DATA.all_orgs.length}개)</div>
+    <table class="orgs-table"><thead><tr>${thead}</tr></thead><tbody>${rows}</tbody></table>`;
+}
+
+function sortOrgs(key) {
+  if (orgsSort.key === key) orgsSort.asc = !orgsSort.asc;
+  else { orgsSort.key = key; orgsSort.asc = true; }
+  renderAllOrgs();
+}
+
+document.getElementById('orgs-search').addEventListener('input', e => {
+  orgsQuery = e.target.value.trim().toLowerCase();
+  renderAllOrgs();
+});
+document.querySelectorAll('[data-orgs-filter]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('[data-orgs-filter]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    orgsFilter = btn.dataset.orgsFilter;
+    renderAllOrgs();
+  });
+});
+
+function openModalByOrg(org) {
+  const idx = DATA.cards.findIndex(c => c.org === org);
+  if (idx >= 0) openModal(idx);
+  else alert(org + '은 대시보드 카드에 없지만 전체 기관 데이터에는 포함돼 있습니다.');
+}
+
+// 월별 타임라인 렌더링
+function renderMonthly() {
+  const host = document.getElementById('month-blocks');
+  const blocks = (DATA.monthly_timeline || []).map(m => {
+    const entries = m.entries.map(e => {
+      const staleTag = e.stale ? ' ⚠' : '';
+      const countTag = e.past_count ? ` (과거 ${e.past_count}회)` : '';
+      return `<div class="month-entry type-${e.type}" onclick="openModalByOrg('${fmt.esc(e.org)}')">
+        <span class="entry-org">${fmt.esc(e.org)}${staleTag}</span>
+        <span class="entry-meta">
+          <span class="entry-date">${e.date.slice(5)}</span> · ${e.type}${countTag} · ${fmt.esc(e.modality || '—')}
+        </span>
+      </div>`;
+    }).join('');
+    const empty = m.entries.length === 0;
+    return `<div class="month-block ${empty ? 'empty' : ''}">
+      <div class="month-block-head">
+        <h4>${m.label}</h4>
+        <span class="cnt">${m.count}건</span>
+      </div>
+      ${empty ? '<div class="empty-month">예상 발주 없음</div>' : '<div class="month-entries">' + entries + '</div>'}
+    </div>`;
+  }).join('');
+  host.innerHTML = blocks;
 }
 
 function renderMeta() {
