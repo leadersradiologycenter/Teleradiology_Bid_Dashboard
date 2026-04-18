@@ -637,15 +637,34 @@ function renderCards() {
     return;
   }
   // 섹션 분리:
-  //   1. 정기 발주 예상 (주기 명확 + 정상)
-  //   2. 비정기 발주 예상 (파트별 분산)
+  //   0. 🔴 마감 임박 (활성 공고 있는 카드 — 최상단)
+  //   1. 정기 발주 예상
+  //   2. 비정기 발주 예상
   //   3. 주기이탈/장기미발주 (참고용)
-  const inactive = visible.filter(x => x.c.stale || x.c.long_inactive);
-  const healthy  = visible.filter(x => !x.c.stale && !x.c.long_inactive);
+  const active   = visible.filter(x => x.c.has_active_actual);
+  const rest     = visible.filter(x => !x.c.has_active_actual);
+  const inactive = rest.filter(x => x.c.stale || x.c.long_inactive);
+  const healthy  = rest.filter(x => !x.c.stale && !x.c.long_inactive);
   const regular  = healthy.filter(x => !x.c.irregular);
   const irregular = healthy.filter(x => x.c.irregular);
 
+  // 마감 임박: 가장 가까운 활성 마감일 순
+  active.sort((a, b) => {
+    const closeA = (a.c.actual || []).filter(x => x.is_active).map(x => x.closing_date).sort()[0] || '9999-12-31';
+    const closeB = (b.c.actual || []).filter(x => x.is_active).map(x => x.closing_date).sort()[0] || '9999-12-31';
+    return closeA.localeCompare(closeB);
+  });
+
   const sections = [];
+  if (active.length) {
+    sections.push(`
+      <h3 class="section-heading" style="color:#c62828; border-bottom: 2px solid #ef9a9a;">
+        🔴 마감 임박 (입찰 가능) <span class="count">${active.length}건</span>
+        <span class="desc">현재 입찰 진행 중 · D-day 임박 순 · 정기/비정기 관계없이 최상단</span>
+      </h3>
+      <div class="cards-grid">${active.map(({c, i}) => renderCard(c, i)).join('')}</div>
+    `);
+  }
   if (regular.length) {
     sections.push(`
       <h3 class="section-heading">
