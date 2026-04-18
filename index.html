@@ -37,6 +37,24 @@
   header.top h1 { margin: 0 0 4px; font-size: 17px; font-weight: 700; }
   header.top .meta { font-size: 12px; color: var(--text-sub); }
   header.top .meta strong { color: var(--text); }
+  .refresh-tag { padding: 2px 8px; border-radius: 4px; font-weight: 600; margin-left: 4px; }
+  .refresh-fresh { background: #e6f4ea; color: var(--high); }
+  .refresh-warn  { background: #fff3e0; color: #e65100; }
+  .refresh-stale { background: #fce8e6; color: var(--low); }
+
+  /* 원문 바로가기 버튼 */
+  .btn-original {
+    display: inline-block; margin-top: 8px; padding: 6px 12px;
+    background: #c62828; color: #fff; border-radius: 6px; text-decoration: none;
+    font-size: 12px; font-weight: 700;
+  }
+  .btn-original:hover { background: #b71c1c; }
+
+  /* 수동 메모 뱃지 */
+  .note-badge {
+    background: #fffde7; color: #827717; padding: 2px 8px; border-radius: 10px;
+    font-size: 11px; font-weight: 600; border: 1px solid #f9fbe7; cursor: help;
+  }
   .controls { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
   input[type="search"] {
     flex: 1; min-width: 220px; padding: 7px 12px; border: 1px solid #d3d6db;
@@ -384,7 +402,18 @@ const fmt = {
   esc: s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),
 };
 
-// 금액 티어 판정
+// 금액 티어 판정 — 낙찰가 환산 우선, 없으면 추정가 × 평균낙찰률(기본 0.9)
+function tierAmount(c) {
+  if (c.avg_winner_amount != null) {
+    return {v: c.avg_winner_amount, src: 'winner'};
+  }
+  if (c.avg_price_est != null) {
+    const rate = (c.avg_rate != null && c.avg_rate > 0) ? c.avg_rate / 100 : 0.9;
+    return {v: c.avg_price_est * rate, src: 'est'};
+  }
+  return {v: null, src: null};
+}
+
 function amountTier(v) {
   if (v == null) return {code: 'na', label: '정보없음'};
   if (v >= 1e9)   return {code: '10b', label: '10억+'};
@@ -395,6 +424,7 @@ function amountTier(v) {
 }
 
 let DATA = null;
+let NOTES = {};
 let filterTrust = 'all';
 let filterScope = null;  // 'forecast' | 'actual' | null
 let filterTier = 'all';  // 'all' | '10b' | '5b' | '3b' | '1b' | 'sub'
@@ -408,12 +438,16 @@ async function load() {
     document.getElementById('cards-container').innerHTML = '<div class="empty">데이터 로드 실패: ' + fmt.esc(e.message) + '</div>';
     return;
   }
+  // 수동 메모 로드 (실패해도 계속 진행)
+  try {
+    const nres = await fetch('data/notes.json?v=' + Date.now());
+    NOTES = await nres.json();
+  } catch { NOTES = {}; }
   renderMeta();
   renderTimeline();
   renderCards();
   renderAllOrgs();
   renderMonthly();
-  // 탭 카운트
   document.getElementById('tab-cnt-dashboard').textContent = '(' + DATA.total_cards + ')';
   document.getElementById('tab-cnt-all-orgs').textContent = '(' + (DATA.all_orgs || []).length + ')';
 }
@@ -542,9 +576,15 @@ function renderMonthly() {
 function renderMeta() {
   const w = DATA.window;
   const gen = DATA.generated_at.replace('T', ' ').slice(0, 16);
+  const hoursSince = (Date.now() - new Date(DATA.generated_at).getTime()) / 3600000;
+  let tag = '', cls = 'refresh-fresh';
+  if (hoursSince > 36) { cls = 'refresh-stale'; tag = '🔴 36h+ 경과'; }
+  else if (hoursSince > 24) { cls = 'refresh-warn'; tag = '🟡 24h+ 경과'; }
+  else { tag = '🟢 최신'; }
   document.getElementById('meta').innerHTML =
     `윈도우 <strong>${w.start} ~ ${w.end}</strong> (오늘 ±${w.lookback_days}일) · ` +
-    `총 <strong>${DATA.total_cards}</strong>개 기관 카드 · 갱신 ${gen}`;
+    `총 <strong>${DATA.total_cards}</strong>개 기관 카드 · ` +
+    `갱신 ${gen} <span class="refresh-tag ${cls}">${tag}</span>`;
 }
 
 function dateFrac(dateStr) {
@@ -618,7 +658,7 @@ function cardMatches(c) {
   if (filterScope === 'forecast' && !(c.forecast && c.forecast.in_window)) return false;
   if (filterScope === 'actual' && c.actual_count_in_window <= 0) return false;
   if (filterTier !== 'all') {
-    const tier = amountTier(c.avg_winner_amount);
+    const tier = amountTier(tierAmount(c).v);
     if (tier.code !== filterTier) return false;
   }
   if (query) {
@@ -707,8 +747,12 @@ function renderCard(c, idx) {
        </div>`
     : `<div class="event-box empty">예상 정보 없음</div>`;
 
+  const todayMs = Date.parse(DATA.today);
   const acHtml = actuals.length
     ? actuals.map(a => {
+        // 공고일 경과
+        const pubDays = Math.floor((todayMs - Date.parse(a.date)) / 86400000);
+        const pubText = pubDays === 0 ? '오늘 공고' : `${pubDays}일 전 공고`;
         let statusText = '';
         if (a.closing_date) {
           if (a.is_active) {
@@ -720,10 +764,15 @@ function renderCard(c, idx) {
         const secondaryText = a.winner
           ? `낙찰: ${fmt.esc(a.winner)}`
           : (a.name ? fmt.esc(a.name).slice(0, 40) : '');
+        // 원문 버튼은 활성 공고일 때만
+        const btnOriginal = (a.is_active && a.url)
+          ? `<a href="${fmt.esc(a.url)}" class="btn-original" target="_blank" rel="noopener" onclick="event.stopPropagation()">📄 나라장터 원문 →</a>`
+          : '';
         return `
         <div class="event-box ac ${a.is_active ? 'active' : ''}">
-          <span class="date">공고 ${a.date}</span>
+          <span class="date">공고 ${a.date} <span style="font-weight:400;color:var(--text-sub);font-size:10px">(${pubText})</span></span>
           <span class="sub">${statusText}${statusText && secondaryText ? ' · ' : ''}${secondaryText}</span>
+          ${btnOriginal}
         </div>`;
       }).join('')
     : `<div class="event-box empty">실제 공고 없음</div>`;
@@ -750,8 +799,12 @@ function renderCard(c, idx) {
     ? `반복월 ${(c.recurring_months || []).map(m => m + '월').join(', ') || '—'}`
     : `주기 ${c.cycle_months}개월`;
 
-  const tier = amountTier(c.avg_winner_amount);
-  const tierBadge = `<span class="amount-tier tier-${tier.code}" title="평균 낙찰가 기준">${tier.label}</span>`;
+  const tAmt = tierAmount(c);
+  const tier = amountTier(tAmt.v);
+  const tierSuffix = tAmt.src === 'est' ? ' (추정)' : '';
+  const tierBadge = `<span class="amount-tier tier-${tier.code}" title="${tAmt.src === 'est' ? '추정가 × 평균낙찰률' : '평균 낙찰가 기준'}">${tier.label}${tierSuffix}</span>`;
+  const noteText = NOTES[c.org];
+  const noteBadge = noteText ? `<span class="note-badge" title="${fmt.esc(noteText)}">📝 메모</span>` : '';
 
   return `
     <div class="card ${c.stale ? 'stale' : ''}" data-tier="${tier.code}" onclick="openModal(${idx})">
@@ -761,11 +814,12 @@ function renderCard(c, idx) {
           ${tierBadge}
           ${staleBadge}
           ${irregularBadge}
+          ${noteBadge}
           <strong>${fmt.esc(c.org)}</strong>
           <span class="modality-tag">${fmt.esc(c.modality || '미분류')}</span>
         </div>
         <div class="card-sub">
-          공고 ${c.total_bids}회 · ${cycleText} · 평균 낙찰 ${fmt.money(c.avg_winner_amount)} (${fmt.rate(c.avg_rate)})
+          공고 ${c.total_bids}회 · ${cycleText} · 평균 ${tAmt.src === 'est' ? '추정' : '낙찰'} ${fmt.money(tAmt.v)} (${fmt.rate(c.avg_rate)})
         </div>
         ${recurringHtml}
         ${staleNote}
