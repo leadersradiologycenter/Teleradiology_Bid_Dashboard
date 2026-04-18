@@ -116,7 +116,14 @@
   .trust-유력 { background: #e6f4ea; color: var(--high); }
   .trust-잠재 { background: #fef7e0; color: var(--mid); }
   .trust-저 { background: #fce8e6; color: var(--low); }
+  .stale-badge {
+    background: #fde7e7; color: #c62828; padding: 2px 8px; border-radius: 10px;
+    font-size: 11px; font-weight: 600; border: 1px solid #f4c7c7;
+  }
+  .card.stale { opacity: 0.88; }
+  .card.stale .card-head { background: linear-gradient(to right, #fff 60%, #fdf4f4); }
   .card-sub { margin-top: 4px; font-size: 12px; color: var(--text-sub); }
+  .card-sub .warn { color: #c62828; font-weight: 600; }
 
   .card-body { display: flex; gap: 8px; padding: 10px 14px 14px; }
   .event-col { flex: 1; min-width: 0; }
@@ -368,17 +375,23 @@ function renderCard(c, idx) {
         </div>`).join('')
     : `<div class="event-box empty">실제 공고 없음</div>`;
 
+  const staleBadge = c.stale ? `<span class="stale-badge" title="주기의 1.5배 이상 공고 없음">⚠ 주기이탈</span>` : '';
+  const staleNote = c.stale
+    ? `<div class="card-sub"><span class="warn">⚠ 마지막 공고 후 ${fmt.num(c.months_since_last)}개월 경과</span> (원신뢰도 ${c.raw_confidence || '—'} → ${c.confidence}로 강등)</div>`
+    : '';
   return `
-    <div class="card" onclick="openModal(${idx})">
+    <div class="card ${c.stale ? 'stale' : ''}" onclick="openModal(${idx})">
       <div class="card-head">
         <div class="card-title">
           <span class="badge trust-${c.confidence}">${c.confidence}</span>
+          ${staleBadge}
           <strong>${fmt.esc(c.org)}</strong>
           <span class="modality-tag">${fmt.esc(c.modality || '미분류')}</span>
         </div>
         <div class="card-sub">
-          공고 ${c.total_bids}회 · 주기 ${fmt.num(c.cycle_months)}개월 · 평균 낙찰 ${fmt.money(c.avg_winner_amount)} (${fmt.rate(c.avg_rate)})
+          공고 ${c.total_bids}회 · 주기 ${c.cycle_months}개월 · 평균 낙찰 ${fmt.money(c.avg_winner_amount)} (${fmt.rate(c.avg_rate)})
         </div>
+        ${staleNote}
       </div>
       <div class="card-body">
         <div class="event-col forecast">
@@ -395,10 +408,11 @@ function renderCard(c, idx) {
 
 function openModal(idx) {
   const c = DATA.cards[idx];
+  const mStaleBadge = c.stale ? ` <span class="stale-badge">⚠ 주기이탈 ${fmt.num(c.months_since_last)}개월</span>` : '';
   document.getElementById('modal-title').innerHTML =
-    `<span class="badge trust-${c.confidence}">${c.confidence}</span> ${fmt.esc(c.org)} <span class="modality-tag">${fmt.esc(c.modality)}</span>`;
+    `<span class="badge trust-${c.confidence}">${c.confidence}</span>${mStaleBadge} ${fmt.esc(c.org)} <span class="modality-tag">${fmt.esc(c.modality)}</span>`;
   document.getElementById('modal-sub').textContent =
-    `최초 ${c.first_date} ~ 최근 ${c.last_date} · 공고 ${c.total_bids}회 · 주기 ${fmt.num(c.cycle_months)}개월`;
+    `최초 ${c.first_date} ~ 최근 ${c.last_date} · 공고 ${c.total_bids}회 · 주기 ${c.cycle_months}개월${c.stale ? ' · 경과 ' + c.months_since_last + '개월' : ''}`;
 
   const winners = (c.past_winners || []).map(w =>
     `<span class="tag">${fmt.esc(w.name)}<span class="cnt">×${w.count}</span></span>`).join('') ||
