@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-21T00:51:36",
+  "generated_at": "2026-04-21T01:22:42",
   "today": "2026-04-21",
   "window": {
     "start": "2026-03-10",
@@ -7,7 +7,7 @@
     "lookback_days": 42,
     "lookahead_days": 42
   },
-  "total_cards": 12,
+  "total_cards": 11,
   "cards": [
     {
       "org": "부산대학교병원",
@@ -543,81 +543,6 @@
           "winner_rate": null,
           "participant_count": 0,
           "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230524913&bidPbancOrd=000"
-        }
-      ]
-    },
-    {
-      "org": "한국산업안전보건공단 산업안전보건연구원",
-      "modality": "미분류",
-      "confidence": "저",
-      "raw_confidence": "저",
-      "stale": false,
-      "long_inactive": false,
-      "irregular": false,
-      "recurring_months": [],
-      "recurring_dates": [],
-      "nearest_forecast_date": null,
-      "months_since_last": 0.0,
-      "cycle_months": 12,
-      "total_bids": 1,
-      "annual_freq": 1.0,
-      "series_count": 1,
-      "first_date": "2026-04-20",
-      "last_date": "2026-04-20",
-      "avg_price_est": 25454545.0,
-      "avg_winner_amount": null,
-      "avg_rate": null,
-      "avg_participants": null,
-      "past_winners": [
-        {
-          "name": "",
-          "count": 1
-        }
-      ],
-      "forecast": {
-        "date": "2027-04-20",
-        "days_from_today": 364,
-        "in_window": false
-      },
-      "actual": [
-        {
-          "date": "2026-04-20",
-          "closing_date": "2026-05-04",
-          "is_active": true,
-          "days_to_close": 13,
-          "name": "(재공고)특수 및 진폐건강진단기관 진폐정도관리 흉부방사선사진 판독 교육 대행",
-          "name_raw": "(재공고)특수 및 진폐건강진단기관 진폐정도관리 흉부방사선사진 판독 교육 대행",
-          "bid_no": "R26BK01476986",
-          "price_est": 25454545.0,
-          "winner": null,
-          "winner_amount": null,
-          "winner_amount_raw": null,
-          "winner_amount_abnormal": false,
-          "winner_rate": null,
-          "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01476986&bidPbancOrd=000"
-        }
-      ],
-      "actual_count_in_window": 1,
-      "has_active_actual": true,
-      "active_actual_count": 1,
-      "history": [
-        {
-          "date": "2026-04-20",
-          "closing_date": "2026-05-04",
-          "is_active": true,
-          "days_to_close": 13,
-          "name": "(재공고)특수 및 진폐건강진단기관 진폐정도관리 흉부방사선사진 판독 교육 대행",
-          "name_raw": "(재공고)특수 및 진폐건강진단기관 진폐정도관리 흉부방사선사진 판독 교육 대행",
-          "bid_no": "R26BK01476986",
-          "price_est": 25454545.0,
-          "winner": null,
-          "winner_amount": null,
-          "winner_amount_raw": null,
-          "winner_amount_abnormal": false,
-          "winner_rate": null,
-          "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01476986&bidPbancOrd=000"
         }
       ]
     },
