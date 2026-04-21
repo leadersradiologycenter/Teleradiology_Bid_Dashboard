@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-21T06:16:33",
+  "generated_at": "2026-04-21T12:03:29",
   "today": "2026-04-21",
   "window": {
     "start": "2026-03-10",
@@ -7,7 +7,7 @@
     "lookback_days": 42,
     "lookahead_days": 42
   },
-  "total_cards": 12,
+  "total_cards": 11,
   "cards": [
     {
       "org": "부산대학교병원",
@@ -75,6 +75,9 @@
       "avg_winner_amount": 431804936.0,
       "avg_rate": 93.63,
       "avg_participants": 0.5,
+      "last_price_est": 1169222772.0,
+      "last_winner_rate": 82.402,
+      "last_bid_date": "2021-04-12",
       "past_winners": [
         {
           "name": "대한의료영상의학과의원",
@@ -92,7 +95,7 @@
           "closing_date": "2026-04-22",
           "is_active": true,
           "days_to_close": 1,
-          "name": "(재공고)의료영상(CR, RF, MG, CT, MR) 외주판독 용역 단가계약",
+          "name": "[2026] 부산대학교병원 | 원격영상판독 - CR/CT/MR/MG/RF (재공고, 단가계약)",
           "name_raw": "(재공고)의료영상(CR, RF, MG, CT, MR) 외주판독 용역 단가계약",
           "bid_no": "R26BK01466782",
           "price_est": 3615661560.0,
@@ -102,7 +105,54 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01466782&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01466782&bidPbancOrd=000",
+          "analysis": {
+            "budget_text": "3,615,661,560원(2년 면세)",
+            "budget_api": "3615661560",
+            "budget_note": "단가계약(총액경쟁)으로 2년 예산 예정가 비공개, 품목별 단가×예정량의 합계로 입찰",
+            "staff_min": 6,
+            "tenure_years": 2,
+            "history_years": 3,
+            "history_cond": "최근 3년 이내 상급종합병원에서 원격판독 용역 1년 이상 이행완료 실적 + 최근 3년 이내 의료기관에서 연 판독료 기준 6억 이상 이행완료 실적 2개 이상",
+            "other_quals": [
+              "상근전문의 자격증, 4대보험 가입자명부, 심평원 의사등록신고 내역 증빙 가능",
+              "PACS 시스템 적격심사 통과(영상의학과 PACS실 확인)",
+              "조달청 입찰참가자격등록증 소유"
+            ],
+            "modalities": [
+              "CR",
+              "RF",
+              "MG",
+              "CT",
+              "MR"
+            ],
+            "volume_est": "2년 기준 총 349,872건(CR 202,728건, RF 480건, MG 480건, CT 130,304건, MR 15,880건)",
+            "contract_period": "2026-06-01 ~ 2028-05-31",
+            "readout_sla": "정기판독: 48시간 이내(토·일·공휴일 제외), 응급판독: 4시간 이내",
+            "special_terms": [
+              "DICOM 3.0, HL7 국제표준 준수",
+              "DICOM Sending, File Sending, FTP 방식 지원",
+              "판독 결과 자동 PACS/EMR 입력",
+              "통계 및 조회 기능 지원(엑셀 저장 가능)",
+              "환자 개인정보 보호",
+              "판독 의사 100% 전문의 원칙",
+              "응급판독료는 정기판독 단가의 1.5배",
+              "재위탁 원칙 금지(사전 협의 시에만 허용)",
+              "불성실 판독 시 판독의사 교체 요구 가능"
+            ],
+            "pacs_products": null,
+            "pacs_systems": [
+              "PACS",
+              "EMR"
+            ],
+            "dicom": true,
+            "hl7": true,
+            "summary": "부산대학교병원의 2년 의료영상 외주판독 용역(CR, RF, MG, CT, MR)으로 총 34만 9천여 건 규모입니다. 상근 영상의학 전문의 6명(2년 이상 근속) 확보 및 최근 3년 내 상급종합병원 실적 + 연 6억 이상 2건 이상 실적 증명이 적격 필수조건이며, DICOM/HL7 표준 준수와 PACS·EMR 연동이 필수입니다. 규격심사 통과 후 최저가 낙찰 방식으로 진행됩니다.",
+            "recommend": "회피",
+            "recommend_reason": "상근 전문의 6명 2년 이상 확보 요건이 높은 진입장벽이며, 상급종합병원 1년 이상 실적과 연 6억 이상 2건 실적 동시 충족도 까다롭습니다. 이미 재공고 단계로 경쟁이 심화되었을 가능성이 있습니다.",
+            "staff_feasibility": "낮음",
+            "history_feasibility": "중간"
+          }
         }
       ],
       "actual_count_in_window": 2,
@@ -114,7 +164,7 @@
           "closing_date": "2026-04-22",
           "is_active": true,
           "days_to_close": 1,
-          "name": "(재공고)의료영상(CR, RF, MG, CT, MR) 외주판독 용역 단가계약",
+          "name": "[2026] 부산대학교병원 | 원격영상판독 - CR/CT/MR/MG/RF (재공고, 단가계약)",
           "name_raw": "(재공고)의료영상(CR, RF, MG, CT, MR) 외주판독 용역 단가계약",
           "bid_no": "R26BK01466782",
           "price_est": 3615661560.0,
@@ -124,14 +174,61 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01466782&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01466782&bidPbancOrd=000",
+          "analysis": {
+            "budget_text": "3,615,661,560원(2년 면세)",
+            "budget_api": "3615661560",
+            "budget_note": "단가계약(총액경쟁)으로 2년 예산 예정가 비공개, 품목별 단가×예정량의 합계로 입찰",
+            "staff_min": 6,
+            "tenure_years": 2,
+            "history_years": 3,
+            "history_cond": "최근 3년 이내 상급종합병원에서 원격판독 용역 1년 이상 이행완료 실적 + 최근 3년 이내 의료기관에서 연 판독료 기준 6억 이상 이행완료 실적 2개 이상",
+            "other_quals": [
+              "상근전문의 자격증, 4대보험 가입자명부, 심평원 의사등록신고 내역 증빙 가능",
+              "PACS 시스템 적격심사 통과(영상의학과 PACS실 확인)",
+              "조달청 입찰참가자격등록증 소유"
+            ],
+            "modalities": [
+              "CR",
+              "RF",
+              "MG",
+              "CT",
+              "MR"
+            ],
+            "volume_est": "2년 기준 총 349,872건(CR 202,728건, RF 480건, MG 480건, CT 130,304건, MR 15,880건)",
+            "contract_period": "2026-06-01 ~ 2028-05-31",
+            "readout_sla": "정기판독: 48시간 이내(토·일·공휴일 제외), 응급판독: 4시간 이내",
+            "special_terms": [
+              "DICOM 3.0, HL7 국제표준 준수",
+              "DICOM Sending, File Sending, FTP 방식 지원",
+              "판독 결과 자동 PACS/EMR 입력",
+              "통계 및 조회 기능 지원(엑셀 저장 가능)",
+              "환자 개인정보 보호",
+              "판독 의사 100% 전문의 원칙",
+              "응급판독료는 정기판독 단가의 1.5배",
+              "재위탁 원칙 금지(사전 협의 시에만 허용)",
+              "불성실 판독 시 판독의사 교체 요구 가능"
+            ],
+            "pacs_products": null,
+            "pacs_systems": [
+              "PACS",
+              "EMR"
+            ],
+            "dicom": true,
+            "hl7": true,
+            "summary": "부산대학교병원의 2년 의료영상 외주판독 용역(CR, RF, MG, CT, MR)으로 총 34만 9천여 건 규모입니다. 상근 영상의학 전문의 6명(2년 이상 근속) 확보 및 최근 3년 내 상급종합병원 실적 + 연 6억 이상 2건 이상 실적 증명이 적격 필수조건이며, DICOM/HL7 표준 준수와 PACS·EMR 연동이 필수입니다. 규격심사 통과 후 최저가 낙찰 방식으로 진행됩니다.",
+            "recommend": "회피",
+            "recommend_reason": "상근 전문의 6명 2년 이상 확보 요건이 높은 진입장벽이며, 상급종합병원 1년 이상 실적과 연 6억 이상 2건 실적 동시 충족도 까다롭습니다. 이미 재공고 단계로 경쟁이 심화되었을 가능성이 있습니다.",
+            "staff_feasibility": "낮음",
+            "history_feasibility": "중간"
+          }
         },
         {
           "date": "2026-04-07",
           "closing_date": "2026-04-15",
           "is_active": false,
           "days_to_close": -6,
-          "name": "의료영상(CR, RF, MG, CT, MR) 외주판독 용역 단가계약",
+          "name": "[2026] 부산대학교병원 | 원격영상판독 - CR/CT/MR/MG/RF (단가계약)",
           "name_raw": "의료영상(CR, RF, MG, CT, MR) 외주판독 용역 단가계약",
           "bid_no": "R26BK01447108",
           "price_est": 3615661560.0,
@@ -141,14 +238,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01447108&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01447108&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2024-09-12",
           "closing_date": "2024-09-24",
           "is_active": false,
           "days_to_close": -574,
-          "name": "의료영상(MR Brain) 외주판독 용역",
+          "name": "[2024] 부산대학교병원 | 원격영상판독 - MR",
           "name_raw": "의료영상(MR Brain) 외주판독 용역",
           "bid_no": "20240912047",
           "price_est": 528000000.0,
@@ -158,14 +256,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240912047&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240912047&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2024-05-14",
           "closing_date": "2024-05-22",
           "is_active": false,
           "days_to_close": -699,
-          "name": "의료영상(CR, RF, MG, CT) 외주판독 용역",
+          "name": "[2024] 부산대학교병원 | 원격영상판독 - CR/CT/MG/RF",
           "name_raw": "의료영상(CR, RF, MG, CT) 외주판독 용역",
           "bid_no": "20240516143",
           "price_est": 3349126860.0,
@@ -175,14 +274,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240516143&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240516143&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2024-05-02",
           "closing_date": "2024-05-08",
           "is_active": false,
           "days_to_close": -713,
-          "name": "(재공고)의료영상(CR, RF, MG, CT) 외주판독 용역",
+          "name": "[2024] 부산대학교병원 | 원격영상판독 - CR/CT/MG/RF (재공고)",
           "name_raw": "(재공고)의료영상(CR, RF, MG, CT) 외주판독 용역",
           "bid_no": "20240502557",
           "price_est": 3349126860.0,
@@ -192,14 +292,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240502557&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240502557&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2024-04-22",
           "closing_date": "2024-05-02",
           "is_active": false,
           "days_to_close": -719,
-          "name": "의료영상(CR, RF, MG, CT) 외주판독 용역",
+          "name": "[2024] 부산대학교병원 | 원격영상판독 - CR/CT/MG/RF",
           "name_raw": "의료영상(CR, RF, MG, CT) 외주판독 용역",
           "bid_no": "20240427843",
           "price_est": 3349126860.0,
@@ -209,14 +310,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240427843&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240427843&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2024-03-12",
           "closing_date": "2024-03-20",
           "is_active": false,
           "days_to_close": -762,
-          "name": "의료영상(MR Breast(CE) & Diffusion) 외주판독 용역 단가계약",
+          "name": "[2024] 부산대학교병원 | 원격영상판독 - MR (단가계약)",
           "name_raw": "의료영상(MR Breast(CE) & Diffusion) 외주판독 용역 단가계약",
           "bid_no": "20240317361",
           "price_est": 165750000.0,
@@ -226,14 +328,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240317361&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240317361&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2022-07-26",
           "closing_date": "2022-08-01",
           "is_active": false,
           "days_to_close": -1359,
-          "name": "(재공고)의료영상(MR Breast) 외주판독 용역 단가계약",
+          "name": "[2022] 부산대학교병원 | 원격영상판독 - MR (재공고, 단가계약)",
           "name_raw": "(재공고)의료영상(MR Breast) 외주판독 용역 단가계약",
           "bid_no": "20220730252",
           "price_est": 43200000.0,
@@ -243,14 +346,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20220730252&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20220730252&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2022-07-18",
           "closing_date": "2022-07-26",
           "is_active": false,
           "days_to_close": -1365,
-          "name": "의료영상(MR Breast) 외주판독 용역 단가계약",
+          "name": "[2022] 부산대학교병원 | 원격영상판독 - MR (단가계약)",
           "name_raw": "의료영상(MR Breast) 외주판독 용역 단가계약",
           "bid_no": "20220721067",
           "price_est": 43200000.0,
@@ -260,14 +364,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20220721067&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20220721067&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2022-05-17",
           "closing_date": "2022-05-25",
           "is_active": false,
           "days_to_close": -1427,
-          "name": "의료영상(CR, RF, MG, CT) 외주판독 용역 단가계약",
+          "name": "[2022] 부산대학교병원 | 원격영상판독 - CR/CT/MG/RF (단가계약)",
           "name_raw": "의료영상(CR, RF, MG, CT) 외주판독 용역 단가계약",
           "bid_no": "20220523051",
           "price_est": 3390258000.0,
@@ -277,7 +382,8 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20220523051&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20220523051&bidPbancOrd=000",
+          "analysis": null
         }
       ]
     },
@@ -340,6 +446,9 @@
       "avg_winner_amount": null,
       "avg_rate": null,
       "avg_participants": 0.0,
+      "last_price_est": 1471536000.0,
+      "last_winner_rate": null,
+      "last_bid_date": "2026-04-17",
       "past_winners": [
         {
           "name": "",
@@ -367,7 +476,54 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01473895&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01473895&bidPbancOrd=000",
+          "analysis": {
+            "budget_text": "단가총액입찰 (품목별 개별단가의 합) - 계약단가 낙찰배분율표 기준으로 비율 적용",
+            "budget_api": "1471536000",
+            "budget_note": "단가총액제 계약으로 병원이 정한 계약단가 낙찰배분율표에 따라 품목별 개별단가 자동 결정. VAT 면세 사업. 소수점 처리로 제안가격과 실제 계약금액 차이 가능.",
+            "staff_min": 4,
+            "tenure_years": null,
+            "history_years": 5,
+            "history_cond": "최근 5년 이내 단일 계약건으로 500병상 이상의 종합병원(의료법 제3조)에서 1년 이상의 원격영상판독 수행실적 필수",
+            "other_quals": [
+              "영상의학과 분야에서 전임의(임상강사) 경력 1년 이상인 전문의 2인 이상 보유 필수",
+              "복부/흉부/비뇨/심혈관 섹션별 해당 분야 전임의(임상강사) 1년 이상 경력자 배치 필수",
+              "심평원 의사등록 내역 제출",
+              "경력증명서 제출",
+              "실적증명서 제출 (최대 5건)"
+            ],
+            "modalities": [
+              "CT"
+            ],
+            "volume_est": "CT Non-Contrast 총 71,268건, CT Contrast 총 33,624건, CT Heart 총 1,752건 (총 106,644건 추정)",
+            "contract_period": "2026-06-01 ~ 2027-05-31",
+            "readout_sla": "일반판독: 평일 기준 48시간 이내 | 응급판독: 4시간 이내 (정규시간: 평일 09:00~18:00, 토일공휴일 제외)",
+            "special_terms": [
+              "네트워크 기반 원격판독용 S/W 업체 비용으로 설치·제공",
+              "Auto Refer Exam 기능 포함 필수",
+              "비식별화 조치된 환자정보 제공 (이름 가운데 '*' 표시)",
+              "응급질환 진단 시 즉시 전화연락 (CVR 기준 참고)",
+              "CVR 발송 기록 엑셀 제출 필수",
+              "이전 판독내용·환자위치 등 제한적 데이터 연동 필수",
+              "판독 후 영상정보·판독문 1개월 이내 삭제",
+              "전문분야별 전문의가 100% 판독 원칙",
+              "재위탁 불가 (본원 서면동의 하에만 예외)",
+              "월 최대 의뢰건수: 복부 2,000건, 흉부 2,500건, 비뇨 1,500건, 심혈관 250건"
+            ],
+            "pacs_products": null,
+            "pacs_systems": [
+              "PACS",
+              "EMR",
+              "병원물품조달시스템(HLS)"
+            ],
+            "dicom": true,
+            "hl7": true,
+            "summary": "분당서울대학교병원의 CT 영상 원격판독 위탁용역으로, 2026.6~2027.5 1년 계약. 상근 전문의 4인 이상, 전임의 경력 1년 이상 전문의 2인 이상, 최근 5년 내 500병상 이상 종합병원 1년 이상 실적 필수. DICOM/HL7 표준 준수, PACS 연동 필수, 응급판독 4시간 대응 필요.",
+            "recommend": "적극",
+            "recommend_reason": "상근 4명 이상 조건은 기본이나, 최근 5년 내 500병상 이상 종합병원 1년 실적이 핵심 적격심사 기준. PACS 연동·DICOM/HL7 호환성 확보 필수. 재공고임을 고려하면 이전 낙찰자의 부재 또는 계약 불이행으로 인한 기회 가능성 높음.",
+            "staff_feasibility": "높음",
+            "history_feasibility": "중간"
+          }
         }
       ],
       "actual_count_in_window": 2,
@@ -389,14 +545,61 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01473895&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01473895&bidPbancOrd=000",
+          "analysis": {
+            "budget_text": "단가총액입찰 (품목별 개별단가의 합) - 계약단가 낙찰배분율표 기준으로 비율 적용",
+            "budget_api": "1471536000",
+            "budget_note": "단가총액제 계약으로 병원이 정한 계약단가 낙찰배분율표에 따라 품목별 개별단가 자동 결정. VAT 면세 사업. 소수점 처리로 제안가격과 실제 계약금액 차이 가능.",
+            "staff_min": 4,
+            "tenure_years": null,
+            "history_years": 5,
+            "history_cond": "최근 5년 이내 단일 계약건으로 500병상 이상의 종합병원(의료법 제3조)에서 1년 이상의 원격영상판독 수행실적 필수",
+            "other_quals": [
+              "영상의학과 분야에서 전임의(임상강사) 경력 1년 이상인 전문의 2인 이상 보유 필수",
+              "복부/흉부/비뇨/심혈관 섹션별 해당 분야 전임의(임상강사) 1년 이상 경력자 배치 필수",
+              "심평원 의사등록 내역 제출",
+              "경력증명서 제출",
+              "실적증명서 제출 (최대 5건)"
+            ],
+            "modalities": [
+              "CT"
+            ],
+            "volume_est": "CT Non-Contrast 총 71,268건, CT Contrast 총 33,624건, CT Heart 총 1,752건 (총 106,644건 추정)",
+            "contract_period": "2026-06-01 ~ 2027-05-31",
+            "readout_sla": "일반판독: 평일 기준 48시간 이내 | 응급판독: 4시간 이내 (정규시간: 평일 09:00~18:00, 토일공휴일 제외)",
+            "special_terms": [
+              "네트워크 기반 원격판독용 S/W 업체 비용으로 설치·제공",
+              "Auto Refer Exam 기능 포함 필수",
+              "비식별화 조치된 환자정보 제공 (이름 가운데 '*' 표시)",
+              "응급질환 진단 시 즉시 전화연락 (CVR 기준 참고)",
+              "CVR 발송 기록 엑셀 제출 필수",
+              "이전 판독내용·환자위치 등 제한적 데이터 연동 필수",
+              "판독 후 영상정보·판독문 1개월 이내 삭제",
+              "전문분야별 전문의가 100% 판독 원칙",
+              "재위탁 불가 (본원 서면동의 하에만 예외)",
+              "월 최대 의뢰건수: 복부 2,000건, 흉부 2,500건, 비뇨 1,500건, 심혈관 250건"
+            ],
+            "pacs_products": null,
+            "pacs_systems": [
+              "PACS",
+              "EMR",
+              "병원물품조달시스템(HLS)"
+            ],
+            "dicom": true,
+            "hl7": true,
+            "summary": "분당서울대학교병원의 CT 영상 원격판독 위탁용역으로, 2026.6~2027.5 1년 계약. 상근 전문의 4인 이상, 전임의 경력 1년 이상 전문의 2인 이상, 최근 5년 내 500병상 이상 종합병원 1년 이상 실적 필수. DICOM/HL7 표준 준수, PACS 연동 필수, 응급판독 4시간 대응 필요.",
+            "recommend": "적극",
+            "recommend_reason": "상근 4명 이상 조건은 기본이나, 최근 5년 내 500병상 이상 종합병원 1년 실적이 핵심 적격심사 기준. PACS 연동·DICOM/HL7 호환성 확보 필수. 재공고임을 고려하면 이전 낙찰자의 부재 또는 계약 불이행으로 인한 기회 가능성 높음.",
+            "staff_feasibility": "높음",
+            "history_feasibility": "중간"
+          }
         },
         {
           "date": "2026-04-09",
           "closing_date": "2026-04-17",
           "is_active": false,
           "days_to_close": -4,
-          "name": "원격영상판독 위탁 용역",
+          "name": "[2026] 분당서울대학교병원 | 원격영상판독 - 영상",
           "name_raw": "원격영상판독 위탁 용역",
           "bid_no": "R26BK01453243",
           "price_est": 1471536000.0,
@@ -406,14 +609,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01453243&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01453243&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2025-03-25",
           "closing_date": "2025-04-01",
           "is_active": false,
           "days_to_close": -385,
-          "name": "원격영상판독 위탁 용역(복부, 흉부, 비뇨)(재공고)",
+          "name": "[2025] 분당서울대학교병원 | 원격영상판독 - 영상 (재공고)",
           "name_raw": "원격영상판독 위탁 용역(복부, 흉부, 비뇨)(재공고)",
           "bid_no": "R25BK00740490",
           "price_est": 0.0,
@@ -423,14 +627,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00740490&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00740490&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2025-03-14",
           "closing_date": "2025-03-25",
           "is_active": false,
           "days_to_close": -392,
-          "name": "원격영상판독 위탁 용역(복부, 흉부, 비뇨)",
+          "name": "[2025] 분당서울대학교병원 | 원격영상판독 - 영상",
           "name_raw": "원격영상판독 위탁 용역(복부, 흉부, 비뇨)",
           "bid_no": "R25BK00712748",
           "price_est": 0.0,
@@ -440,14 +645,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00712748&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00712748&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2024-01-31",
           "closing_date": "2024-02-06",
           "is_active": false,
           "days_to_close": -805,
-          "name": "원격영상판독 위탁 용역(복부, 흉부, 비뇨)(재공고)",
+          "name": "[2024] 분당서울대학교병원 | 원격영상판독 - 영상 (재공고)",
           "name_raw": "원격영상판독 위탁 용역(복부, 흉부, 비뇨)(재공고)",
           "bid_no": "20240135395",
           "price_est": 0.0,
@@ -457,14 +663,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240135395&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240135395&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2024-01-23",
           "closing_date": "2024-01-31",
           "is_active": false,
           "days_to_close": -811,
-          "name": "원격영상판독 위탁 용역(복부, 흉부, 비뇨)",
+          "name": "[2024] 분당서울대학교병원 | 원격영상판독 - 영상",
           "name_raw": "원격영상판독 위탁 용역(복부, 흉부, 비뇨)",
           "bid_no": "20240123580",
           "price_est": 0.0,
@@ -474,14 +681,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240123580&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240123580&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2023-06-21",
           "closing_date": "2023-06-27",
           "is_active": false,
           "days_to_close": -1029,
-          "name": "영상의학과 원격영상판독 위탁 용역(비뇨)(재공고)",
+          "name": "[2023] 분당서울대학교병원 | 원격영상판독 - 영상 (재공고)",
           "name_raw": "영상의학과 원격영상판독 위탁 용역(비뇨)(재공고)",
           "bid_no": "20230632955",
           "price_est": 0.0,
@@ -491,14 +699,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230632955&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230632955&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2023-06-13",
           "closing_date": "2023-06-21",
           "is_active": false,
           "days_to_close": -1035,
-          "name": "영상의학과 원격영상판독 위탁 용역(비뇨)",
+          "name": "[2023] 분당서울대학교병원 | 원격영상판독 - 영상",
           "name_raw": "영상의학과 원격영상판독 위탁 용역(비뇨)",
           "bid_no": "20230617517",
           "price_est": 0.0,
@@ -508,14 +717,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230617517&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230617517&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2023-05-25",
           "closing_date": "2023-05-31",
           "is_active": false,
           "days_to_close": -1056,
-          "name": "영상의학과 원격영상판독 위탁 용역(흉부)(재공고)",
+          "name": "[2023] 분당서울대학교병원 | 원격영상판독 - 영상 (재공고)",
           "name_raw": "영상의학과 원격영상판독 위탁 용역(흉부)(재공고)",
           "bid_no": "20230538925",
           "price_est": 0.0,
@@ -525,14 +735,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230538925&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230538925&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2023-05-17",
           "closing_date": "2023-05-25",
           "is_active": false,
           "days_to_close": -1062,
-          "name": "영상의학과 원격영상판독 위탁 용역(흉부)",
+          "name": "[2023] 분당서울대학교병원 | 원격영상판독 - 영상",
           "name_raw": "영상의학과 원격영상판독 위탁 용역(흉부)",
           "bid_no": "20230524913",
           "price_est": 0.0,
@@ -542,266 +753,8 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230524913&bidPbancOrd=000"
-        }
-      ]
-    },
-    {
-      "org": "조달청 서울지방조달청",
-      "modality": "초음파·의료영상·영상",
-      "confidence": "유력",
-      "raw_confidence": "유력",
-      "stale": false,
-      "long_inactive": false,
-      "irregular": true,
-      "recurring_months": [
-        10,
-        11,
-        12
-      ],
-      "recurring_dates": [
-        {
-          "date": "2026-10-27",
-          "month": 10,
-          "past_count": 2,
-          "avg_day": 27
-        },
-        {
-          "date": "2026-11-19",
-          "month": 11,
-          "past_count": 13,
-          "avg_day": 19
-        },
-        {
-          "date": "2026-12-10",
-          "month": 12,
-          "past_count": 12,
-          "avg_day": 10
-        }
-      ],
-      "nearest_forecast_date": null,
-      "months_since_last": 0.0,
-      "cycle_months": 12,
-      "total_bids": 29,
-      "annual_freq": 3.08,
-      "series_count": 3,
-      "first_date": "2016-11-21",
-      "last_date": "2026-04-21",
-      "avg_price_est": 472307379.0,
-      "avg_winner_amount": 689405899.0,
-      "avg_rate": 97.82,
-      "avg_participants": 0.8,
-      "past_winners": [
-        {
-          "name": "헤셀의원",
-          "count": 4
-        },
-        {
-          "name": "휴먼영상의학과의원",
-          "count": 1
-        },
-        {
-          "name": "",
-          "count": 1
-        }
-      ],
-      "forecast": {
-        "date": "2026-10-27",
-        "days_from_today": 189,
-        "in_window": false
-      },
-      "actual": [
-        {
-          "date": "2026-04-21",
-          "closing_date": "2026-05-08",
-          "is_active": true,
-          "days_to_close": 17,
-          "name": "‘2026년 문화PD 영상 크리에이터 운영 및 신기술 활용 콘텐츠 제작",
-          "name_raw": "‘2026년 문화PD 영상 크리에이터 운영 및 신기술 활용 콘텐츠 제작",
-          "bid_no": "R26BK01479239",
-          "price_est": 258181818.0,
-          "winner": null,
-          "winner_amount": null,
-          "winner_amount_raw": null,
-          "winner_amount_abnormal": false,
-          "winner_rate": null,
-          "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01479239&bidPbancOrd=000"
-        }
-      ],
-      "actual_count_in_window": 1,
-      "has_active_actual": true,
-      "active_actual_count": 1,
-      "history": [
-        {
-          "date": "2026-04-21",
-          "closing_date": "2026-05-08",
-          "is_active": true,
-          "days_to_close": 17,
-          "name": "‘2026년 문화PD 영상 크리에이터 운영 및 신기술 활용 콘텐츠 제작",
-          "name_raw": "‘2026년 문화PD 영상 크리에이터 운영 및 신기술 활용 콘텐츠 제작",
-          "bid_no": "R26BK01479239",
-          "price_est": 258181818.0,
-          "winner": null,
-          "winner_amount": null,
-          "winner_amount_raw": null,
-          "winner_amount_abnormal": false,
-          "winner_rate": null,
-          "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01479239&bidPbancOrd=000"
-        },
-        {
-          "date": "2024-11-08",
-          "closing_date": "2024-11-13",
-          "is_active": false,
-          "days_to_close": -524,
-          "name": "의료영상 원격(외주) 판독 및 초음파 검사 용역 계약 요청(2025년~ 2026년)",
-          "name_raw": "의료영상 원격(외주) 판독 및 초음파 검사 용역 계약 요청(2025년~ 2026년)",
-          "bid_no": "20241110416",
-          "price_est": 1038000000.0,
-          "winner": "헤셀의원",
-          "winner_amount": 1024018140.0,
-          "winner_amount_raw": 999500000.0,
-          "winner_amount_abnormal": false,
-          "winner_rate": 98.653,
-          "participant_count": 1,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20241110416&bidPbancOrd=000"
-        },
-        {
-          "date": "2024-10-28",
-          "closing_date": "2024-11-06",
-          "is_active": false,
-          "days_to_close": -531,
-          "name": "의료영상 원격(외주) 판독 및 초음파 검사 용역 계약 요청(2025년~ 2026년)",
-          "name_raw": "의료영상 원격(외주) 판독 및 초음파 검사 용역 계약 요청(2025년~ 2026년)",
-          "bid_no": "20241028781",
-          "price_est": 1038000000.0,
-          "winner": null,
-          "winner_amount": null,
-          "winner_amount_raw": null,
-          "winner_amount_abnormal": false,
-          "winner_rate": null,
-          "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20241028781&bidPbancOrd=000"
-        },
-        {
-          "date": "2022-11-23",
-          "closing_date": "2022-11-25",
-          "is_active": false,
-          "days_to_close": -1243,
-          "name": "2023년~2024년도 경찰병원 의료영상 및 초음파 원격(외주) 판독 용역",
-          "name_raw": "2023년~2024년도 경찰병원 의료영상 및 초음파 원격(외주) 판독 용역",
-          "bid_no": "20221134648",
-          "price_est": 1038000000.0,
-          "winner": "헤셀의원",
-          "winner_amount": 1019990700.0,
-          "winner_amount_raw": 999100000.0,
-          "winner_amount_abnormal": false,
-          "winner_rate": 98.265,
-          "participant_count": 1,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20221134648&bidPbancOrd=000"
-        },
-        {
-          "date": "2022-10-26",
-          "closing_date": "2022-11-11",
-          "is_active": false,
-          "days_to_close": -1257,
-          "name": "2023년~2024년도 경찰병원 의료영상 및 초음파 원격(외주) 판독 용역",
-          "name_raw": "2023년~2024년도 경찰병원 의료영상 및 초음파 원격(외주) 판독 용역",
-          "bid_no": "20221030141",
-          "price_est": 1038000000.0,
-          "winner": null,
-          "winner_amount": null,
-          "winner_amount_raw": null,
-          "winner_amount_abnormal": false,
-          "winner_rate": null,
-          "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20221030141&bidPbancOrd=000"
-        },
-        {
-          "date": "2022-01-18",
-          "closing_date": "2022-01-27",
-          "is_active": false,
-          "days_to_close": -1545,
-          "name": "2022년도 경찰병원 의료영상 및 초음파 원격(외주) 판독 용역",
-          "name_raw": "2022년도 경찰병원 의료영상 및 초음파 원격(외주) 판독 용역",
-          "bid_no": "20220115908",
-          "price_est": 480900000.0,
-          "winner": "헤셀의원",
-          "winner_amount": 475100346.0,
-          "winner_amount_raw": 464490000.0,
-          "winner_amount_abnormal": false,
-          "winner_rate": 98.794,
-          "participant_count": 2,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20220115908&bidPbancOrd=000"
-        },
-        {
-          "date": "2021-12-03",
-          "closing_date": "2021-12-10",
-          "is_active": false,
-          "days_to_close": -1593,
-          "name": "2022년도 경찰병원 의료영상 및 초음파 원격(외주) 판독 용역",
-          "name_raw": "2022년도 경찰병원 의료영상 및 초음파 원격(외주) 판독 용역",
-          "bid_no": "20211204646",
-          "price_est": 484900000.0,
-          "winner": null,
-          "winner_amount": null,
-          "winner_amount_raw": null,
-          "winner_amount_abnormal": false,
-          "winner_rate": null,
-          "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20211204646&bidPbancOrd=000"
-        },
-        {
-          "date": "2021-11-25",
-          "closing_date": "2021-12-02",
-          "is_active": false,
-          "days_to_close": -1601,
-          "name": "2022년도 경찰병원 의료영상 및 초음파 원격(외주) 판독 용역",
-          "name_raw": "2022년도 경찰병원 의료영상 및 초음파 원격(외주) 판독 용역",
-          "bid_no": "20211118988",
-          "price_est": 484900000.0,
-          "winner": null,
-          "winner_amount": null,
-          "winner_amount_raw": null,
-          "winner_amount_abnormal": false,
-          "winner_rate": null,
-          "participant_count": 2,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20211118988&bidPbancOrd=001"
-        },
-        {
-          "date": "2021-11-15",
-          "closing_date": "2021-11-26",
-          "is_active": false,
-          "days_to_close": -1607,
-          "name": "2022년도 경찰병원 의료영상 및 초음파 원격(외주) 판독 용역",
-          "name_raw": "2022년도 경찰병원 의료영상 및 초음파 원격(외주) 판독 용역",
-          "bid_no": "20211118988",
-          "price_est": 440818182.0,
-          "winner": null,
-          "winner_amount": null,
-          "winner_amount_raw": null,
-          "winner_amount_abnormal": false,
-          "winner_rate": null,
-          "participant_count": 2,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20211118988&bidPbancOrd=000"
-        },
-        {
-          "date": "2020-11-10",
-          "closing_date": "2020-11-20",
-          "is_active": false,
-          "days_to_close": -1978,
-          "name": "2021년도 경찰병원 의료영상 및 초음파 원격(외주) 판독 용역",
-          "name_raw": "2021년도 경찰병원 의료영상 및 초음파 원격(외주) 판독 용역",
-          "bid_no": "20201101985",
-          "price_est": 484720000.0,
-          "winner": "헤셀의원",
-          "winner_amount": 452796341.0,
-          "winner_amount_raw": 444900000.0,
-          "winner_amount_abnormal": false,
-          "winner_rate": 93.414,
-          "participant_count": 2,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20201101985&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230524913&bidPbancOrd=000",
+          "analysis": null
         }
       ]
     },
@@ -857,6 +810,9 @@
       "avg_winner_amount": 830769058.0,
       "avg_rate": 92.73,
       "avg_participants": 1.1,
+      "last_price_est": 1312278000.0,
+      "last_winner_rate": 85.767,
+      "last_bid_date": "2025-05-13",
       "past_winners": [
         {
           "name": "21세기영상의학과의원",
@@ -878,7 +834,7 @@
           "closing_date": "2025-05-23",
           "is_active": false,
           "days_to_close": -333,
-          "name": "영상의학과 영상 검사 원격판독 위탁용역",
+          "name": "[2025] 경상대학교병원 | 원격영상판독 - 영상",
           "name_raw": "영상의학과 영상 검사 원격판독 위탁용역",
           "bid_no": "R25BK00842153",
           "price_est": 1312278000.0,
@@ -888,14 +844,15 @@
           "winner_amount_abnormal": true,
           "winner_rate": 85.767,
           "participant_count": 2,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00842153&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00842153&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2023-06-22",
           "closing_date": "2023-06-23",
           "is_active": false,
           "days_to_close": -1033,
-          "name": "영상의학과 영상 검사 원격판독 위탁용역 수의시담",
+          "name": "[2023] 경상대학교병원 | 원격영상판독 - 영상",
           "name_raw": "영상의학과 영상 검사 원격판독 위탁용역 수의시담",
           "bid_no": "20230632921",
           "price_est": 1.0,
@@ -905,7 +862,8 @@
           "winner_amount_abnormal": false,
           "winner_rate": 97.905,
           "participant_count": 1,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230632921&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230632921&bidPbancOrd=000",
+          "analysis": null
         }
       ],
       "actual_count_in_window": 0,
@@ -917,7 +875,7 @@
           "closing_date": "2025-05-23",
           "is_active": false,
           "days_to_close": -333,
-          "name": "영상의학과 영상 검사 원격판독 위탁용역",
+          "name": "[2025] 경상대학교병원 | 원격영상판독 - 영상",
           "name_raw": "영상의학과 영상 검사 원격판독 위탁용역",
           "bid_no": "R25BK00842153",
           "price_est": 1312278000.0,
@@ -927,14 +885,15 @@
           "winner_amount_abnormal": true,
           "winner_rate": 85.767,
           "participant_count": 2,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00842153&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00842153&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2023-06-22",
           "closing_date": "2023-06-23",
           "is_active": false,
           "days_to_close": -1033,
-          "name": "영상의학과 영상 검사 원격판독 위탁용역 수의시담",
+          "name": "[2023] 경상대학교병원 | 원격영상판독 - 영상",
           "name_raw": "영상의학과 영상 검사 원격판독 위탁용역 수의시담",
           "bid_no": "20230632921",
           "price_est": 1.0,
@@ -944,14 +903,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": 97.905,
           "participant_count": 1,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230632921&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230632921&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2023-06-07",
           "closing_date": "2023-06-20",
           "is_active": false,
           "days_to_close": -1036,
-          "name": "영상의학과 영상검사 원격판독 위탁용역 입찰 재공고",
+          "name": "[2023] 경상대학교병원 | 원격영상판독 - 영상 (재공고)",
           "name_raw": "영상의학과 영상검사 원격판독 위탁용역 입찰 재공고",
           "bid_no": "20230607684",
           "price_est": 1.0,
@@ -961,14 +921,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230607684&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230607684&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2023-05-26",
           "closing_date": "2023-06-07",
           "is_active": false,
           "days_to_close": -1049,
-          "name": "영상의학과 영상검사 원격판독 위탁용역",
+          "name": "[2023] 경상대학교병원 | 원격영상판독 - 영상",
           "name_raw": "영상의학과 영상검사 원격판독 위탁용역",
           "bid_no": "20230541776",
           "price_est": 1.0,
@@ -978,14 +939,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230541776&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230541776&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2022-12-23",
           "closing_date": "2022-12-26",
           "is_active": false,
           "days_to_close": -1212,
-          "name": "영상의학과 CT, MRI 영상(복부) 원격판독 위탁용역 전자수의시담",
+          "name": "[2022] 경상대학교병원 | 원격영상판독 - CT/MRI",
           "name_raw": "영상의학과 CT, MRI 영상(복부) 원격판독 위탁용역 전자수의시담",
           "bid_no": "20221240344",
           "price_est": 1.0,
@@ -995,14 +957,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": 99.984,
           "participant_count": 1,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20221240344&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20221240344&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2022-12-19",
           "closing_date": "2022-12-27",
           "is_active": false,
           "days_to_close": -1211,
-          "name": "영상의학과 CT, MRI 영상(복부) 원격판독 위탁용역 재공고",
+          "name": "[2022] 경상대학교병원 | 원격영상판독 - CT/MRI (재공고)",
           "name_raw": "영상의학과 CT, MRI 영상(복부) 원격판독 위탁용역 재공고",
           "bid_no": "20221230453",
           "price_est": 1.0,
@@ -1012,14 +975,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20221230453&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20221230453&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2022-12-15",
           "closing_date": "2022-12-23",
           "is_active": false,
           "days_to_close": -1215,
-          "name": "영상의학과 CT, MRI 영상 원격판독 위탁용역",
+          "name": "[2022] 경상대학교병원 | 원격영상판독 - CT/MRI",
           "name_raw": "영상의학과 CT, MRI 영상 원격판독 위탁용역",
           "bid_no": "20221222629",
           "price_est": 1.0,
@@ -1029,14 +993,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20221222629&bidPbancOrd=002"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20221222629&bidPbancOrd=002",
+          "analysis": null
         },
         {
           "date": "2022-12-14",
           "closing_date": "2022-12-22",
           "is_active": false,
           "days_to_close": -1216,
-          "name": "영상의학과 CT, MRI 영상 원격판독 위탁용역",
+          "name": "[2022] 경상대학교병원 | 원격영상판독 - CT/MRI",
           "name_raw": "영상의학과 CT, MRI 영상 원격판독 위탁용역",
           "bid_no": "20221222629",
           "price_est": 1.0,
@@ -1046,14 +1011,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20221222629&bidPbancOrd=001"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20221222629&bidPbancOrd=001",
+          "analysis": null
         },
         {
           "date": "2022-12-14",
           "closing_date": "2022-12-22",
           "is_active": false,
           "days_to_close": -1216,
-          "name": "영상의학과 CT, MRI 영상 원격판독 위탁용역",
+          "name": "[2022] 경상대학교병원 | 원격영상판독 - CT/MRI",
           "name_raw": "영상의학과 CT, MRI 영상 원격판독 위탁용역",
           "bid_no": "20221222629",
           "price_est": 1.0,
@@ -1063,14 +1029,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20221222629&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20221222629&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2020-04-28",
           "closing_date": "2020-05-07",
           "is_active": false,
           "days_to_close": -2175,
-          "name": "경상대학교병원 영상의학과 일반영상검사 원격판독 위탁용역 입찰공고",
+          "name": "[2020] 경상대학교병원 | 원격영상판독 - 영상",
           "name_raw": "경상대학교병원 영상의학과 일반영상검사 원격판독 위탁용역 입찰공고",
           "bid_no": "20200436781",
           "price_est": 759336501.0,
@@ -1080,7 +1047,8 @@
           "winner_amount_abnormal": true,
           "winner_rate": 90.0,
           "participant_count": 2,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20200436781&bidPbancOrd=001"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20200436781&bidPbancOrd=001",
+          "analysis": null
         }
       ]
     },
@@ -1108,6 +1076,9 @@
       "avg_winner_amount": 106559832.0,
       "avg_rate": 85.53,
       "avg_participants": 2.8,
+      "last_price_est": 114000000.0,
+      "last_winner_rate": 85.3,
+      "last_bid_date": "2025-04-30",
       "past_winners": [
         {
           "name": "헤셀의원",
@@ -1125,7 +1096,7 @@
           "closing_date": "2025-05-13",
           "is_active": false,
           "days_to_close": -343,
-          "name": "대전보훈병원 의료영상(MRI) 외주판독 용역",
+          "name": "[2025] 대전보훈병원 | 원격영상판독 - MRI",
           "name_raw": "대전보훈병원 의료영상(MRI) 외주판독 용역",
           "bid_no": "R25BK00820964",
           "price_est": 114000000.0,
@@ -1135,14 +1106,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": 85.3,
           "participant_count": 2,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00820964&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00820964&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2024-05-21",
           "closing_date": "2024-05-27",
           "is_active": false,
           "days_to_close": -694,
-          "name": "대전보훈병원 의료영상(MRI) 외주판독 용역(긴급)",
+          "name": "[2024] 대전보훈병원 | 원격영상판독 - MRI (긴급)",
           "name_raw": "대전보훈병원 의료영상(MRI) 외주판독 용역(긴급)",
           "bid_no": "20240525449",
           "price_est": 116000000.0,
@@ -1152,7 +1124,8 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 3,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240525449&bidPbancOrd=001"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240525449&bidPbancOrd=001",
+          "analysis": null
         }
       ],
       "actual_count_in_window": 0,
@@ -1164,7 +1137,7 @@
           "closing_date": "2025-05-13",
           "is_active": false,
           "days_to_close": -343,
-          "name": "대전보훈병원 의료영상(MRI) 외주판독 용역",
+          "name": "[2025] 대전보훈병원 | 원격영상판독 - MRI",
           "name_raw": "대전보훈병원 의료영상(MRI) 외주판독 용역",
           "bid_no": "R25BK00820964",
           "price_est": 114000000.0,
@@ -1174,14 +1147,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": 85.3,
           "participant_count": 2,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00820964&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00820964&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2024-05-21",
           "closing_date": "2024-05-27",
           "is_active": false,
           "days_to_close": -694,
-          "name": "대전보훈병원 의료영상(MRI) 외주판독 용역(긴급)",
+          "name": "[2024] 대전보훈병원 | 원격영상판독 - MRI (긴급)",
           "name_raw": "대전보훈병원 의료영상(MRI) 외주판독 용역(긴급)",
           "bid_no": "20240525449",
           "price_est": 116000000.0,
@@ -1191,14 +1165,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 3,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240525449&bidPbancOrd=001"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240525449&bidPbancOrd=001",
+          "analysis": null
         },
         {
           "date": "2024-05-21",
           "closing_date": "2024-05-27",
           "is_active": false,
           "days_to_close": -694,
-          "name": "대전보훈병원 의료영상(MRI) 외주판독 용역(긴급)",
+          "name": "[2024] 대전보훈병원 | 원격영상판독 - MRI (긴급)",
           "name_raw": "대전보훈병원 의료영상(MRI) 외주판독 용역(긴급)",
           "bid_no": "20240525449",
           "price_est": 116000000.0,
@@ -1208,14 +1183,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 3,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240525449&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240525449&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2023-05-10",
           "closing_date": "2023-05-19",
           "is_active": false,
           "days_to_close": -1068,
-          "name": "23년 대전보훈병원 의료영상(MRI-근골격계)외주판독 용역",
+          "name": "[2023] 대전보훈병원 | 원격영상판독 - MRI",
           "name_raw": "23년 대전보훈병원 의료영상(MRI-근골격계)외주판독 용역",
           "bid_no": "20230513330",
           "price_est": 135109091.0,
@@ -1225,7 +1201,8 @@
           "winner_amount_abnormal": false,
           "winner_rate": 85.766,
           "participant_count": 3,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230513330&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230513330&bidPbancOrd=000",
+          "analysis": null
         }
       ]
     },
@@ -1309,6 +1286,9 @@
       "avg_winner_amount": 381223290.0,
       "avg_rate": 82.66,
       "avg_participants": 1.2,
+      "last_price_est": 394698500.0,
+      "last_winner_rate": 81.328,
+      "last_bid_date": "2025-12-03",
       "past_winners": [
         {
           "name": "재단법인서울의과학연구소 하나로리더스의원",
@@ -1330,7 +1310,7 @@
           "closing_date": "2026-03-03",
           "is_active": false,
           "days_to_close": -49,
-          "name": "2026년 응급영상판독서비스 위탁 사업(재공고)",
+          "name": "[2026] 국립중앙의료원 | 원격영상판독 - 영상 (재공고)",
           "name_raw": "2026년 응급영상판독서비스 위탁 사업(재공고)",
           "bid_no": "R26BK01340195",
           "price_est": 377200000.0,
@@ -1340,14 +1320,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01340195&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01340195&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2026-02-02",
           "closing_date": "2026-02-13",
           "is_active": false,
           "days_to_close": -67,
-          "name": "2026년 응급영상판독서비스 위탁 사업",
+          "name": "[2026] 국립중앙의료원 | 원격영상판독 - 영상",
           "name_raw": "2026년 응급영상판독서비스 위탁 사업",
           "bid_no": "R26BK01310236",
           "price_est": 377200000.0,
@@ -1357,7 +1338,8 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01310236&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01310236&bidPbancOrd=000",
+          "analysis": null
         }
       ],
       "actual_count_in_window": 0,
@@ -1369,7 +1351,7 @@
           "closing_date": "2026-03-03",
           "is_active": false,
           "days_to_close": -49,
-          "name": "2026년 응급영상판독서비스 위탁 사업(재공고)",
+          "name": "[2026] 국립중앙의료원 | 원격영상판독 - 영상 (재공고)",
           "name_raw": "2026년 응급영상판독서비스 위탁 사업(재공고)",
           "bid_no": "R26BK01340195",
           "price_est": 377200000.0,
@@ -1379,14 +1361,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01340195&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01340195&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2026-02-02",
           "closing_date": "2026-02-13",
           "is_active": false,
           "days_to_close": -67,
-          "name": "2026년 응급영상판독서비스 위탁 사업",
+          "name": "[2026] 국립중앙의료원 | 원격영상판독 - 영상",
           "name_raw": "2026년 응급영상판독서비스 위탁 사업",
           "bid_no": "R26BK01310236",
           "price_est": 377200000.0,
@@ -1396,14 +1379,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01310236&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01310236&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2026-01-09",
           "closing_date": "2026-01-20",
           "is_active": false,
           "days_to_close": -91,
-          "name": "2026년 취약지 응급영상판독 시스템 운영 및 유지관리사업",
+          "name": "[2026] 국립중앙의료원 | 원격영상판독 - 영상",
           "name_raw": "2026년 취약지 응급영상판독 시스템 운영 및 유지관리사업",
           "bid_no": "R26BK01265963",
           "price_est": 217272727.0,
@@ -1413,14 +1397,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01265963&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01265963&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2025-12-27",
           "closing_date": "2026-01-07",
           "is_active": false,
           "days_to_close": -104,
-          "name": "2026년 취약지 응급영상판독 시스템 운영 및 유지관리사업",
+          "name": "[2025] 국립중앙의료원 | 원격영상판독 - 영상",
           "name_raw": "2026년 취약지 응급영상판독 시스템 운영 및 유지관리사업",
           "bid_no": "R25BK01250757",
           "price_est": 217272727.0,
@@ -1430,14 +1415,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK01250757&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK01250757&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2025-12-03",
           "closing_date": "2025-12-11",
           "is_active": false,
           "days_to_close": -131,
-          "name": "2026년 의료영상 원격판독 용역",
+          "name": "[2025] 국립중앙의료원 | 원격영상판독 - 의료영상",
           "name_raw": "2026년 의료영상 원격판독 용역",
           "bid_no": "R25BK01200732",
           "price_est": 394698500.0,
@@ -1447,14 +1433,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": 81.328,
           "participant_count": 5,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK01200732&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK01200732&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2024-12-26",
           "closing_date": "2025-01-13",
           "is_active": false,
           "days_to_close": -463,
-          "name": "2025년 취약지 응급영상판독 시스템 운영 및 유지관리",
+          "name": "[2024] 국립중앙의료원 | 원격영상판독 - 영상",
           "name_raw": "2025년 취약지 응급영상판독 시스템 운영 및 유지관리",
           "bid_no": "20241240084",
           "price_est": 150000000.0,
@@ -1464,14 +1451,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20241240084&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20241240084&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2024-11-14",
           "closing_date": "2024-11-22",
           "is_active": false,
           "days_to_close": -515,
-          "name": "2025년 의료영상 원격판독 용역",
+          "name": "[2024] 국립중앙의료원 | 원격영상판독 - 의료영상",
           "name_raw": "2025년 의료영상 원격판독 용역",
           "bid_no": "20241119776",
           "price_est": 493400000.0,
@@ -1481,14 +1469,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 6,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20241119776&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20241119776&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2024-11-11",
           "closing_date": "2024-11-21",
           "is_active": false,
           "days_to_close": -516,
-          "name": "2025년 응급영상 판독서비스 위탁사업",
+          "name": "[2024] 국립중앙의료원 | 원격영상판독 - 영상",
           "name_raw": "2025년 응급영상 판독서비스 위탁사업",
           "bid_no": "20241111709",
           "price_est": 438000000.0,
@@ -1498,14 +1487,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20241111709&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20241111709&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2023-12-29",
           "closing_date": "2024-01-08",
           "is_active": false,
           "days_to_close": -834,
-          "name": "(긴급)「2024년 취약지 응급영상판독 시스템 운영 및 유지관리」 용역",
+          "name": "[2023] 국립중앙의료원 | 원격영상판독 - 영상 (긴급)",
           "name_raw": "(긴급)「2024년 취약지 응급영상판독 시스템 운영 및 유지관리」 용역",
           "bid_no": "20231246359",
           "price_est": 150000000.0,
@@ -1515,14 +1505,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20231246359&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20231246359&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2023-12-01",
           "closing_date": "2023-12-08",
           "is_active": false,
           "days_to_close": -865,
-          "name": "2024년도 의료영상 원격판독 용역",
+          "name": "[2023] 국립중앙의료원 | 원격영상판독 - 의료영상",
           "name_raw": "2024년도 의료영상 원격판독 용역",
           "bid_no": "20231201280",
           "price_est": 525600000.0,
@@ -1532,7 +1523,8 @@
           "winner_amount_abnormal": false,
           "winner_rate": 83.989,
           "participant_count": 4,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20231201280&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20231201280&bidPbancOrd=000",
+          "analysis": null
         }
       ]
     },
@@ -1588,6 +1580,9 @@
       "avg_winner_amount": 1460043356.0,
       "avg_rate": 99.83,
       "avg_participants": 0.7,
+      "last_price_est": 1467572000.0,
+      "last_winner_rate": 99.487,
+      "last_bid_date": "2025-06-20",
       "past_winners": [
         {
           "name": "21세기영상의학과의원",
@@ -1609,7 +1604,7 @@
           "closing_date": "2025-06-24",
           "is_active": false,
           "days_to_close": -301,
-          "name": "창원경상국립대학교병원 영상의학과 영상검사 원격판독 위탁용역 수의시담",
+          "name": "[2025] 창원경상국립대학교병원 | 원격영상판독 - 영상",
           "name_raw": "창원경상국립대학교병원 영상의학과 영상검사 원격판독 위탁용역 수의시담",
           "bid_no": "R25BK00918026",
           "price_est": 1467572000.0,
@@ -1619,14 +1614,15 @@
           "winner_amount_abnormal": true,
           "winner_rate": 99.487,
           "participant_count": 1,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00918026&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00918026&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2025-06-05",
           "closing_date": "2025-06-13",
           "is_active": false,
           "days_to_close": -312,
-          "name": "창원경상국립대학교병원 영상의학과 영상검사 원격판독 위탁용역 입찰 재공고",
+          "name": "[2025] 창원경상국립대학교병원 | 원격영상판독 - 영상 (재공고)",
           "name_raw": "창원경상국립대학교병원 영상의학과 영상검사 원격판독 위탁용역 입찰 재공고",
           "bid_no": "R25BK00888201",
           "price_est": 1467572000.0,
@@ -1636,7 +1632,8 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00888201&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00888201&bidPbancOrd=000",
+          "analysis": null
         }
       ],
       "actual_count_in_window": 0,
@@ -1648,7 +1645,7 @@
           "closing_date": "2025-06-24",
           "is_active": false,
           "days_to_close": -301,
-          "name": "창원경상국립대학교병원 영상의학과 영상검사 원격판독 위탁용역 수의시담",
+          "name": "[2025] 창원경상국립대학교병원 | 원격영상판독 - 영상",
           "name_raw": "창원경상국립대학교병원 영상의학과 영상검사 원격판독 위탁용역 수의시담",
           "bid_no": "R25BK00918026",
           "price_est": 1467572000.0,
@@ -1658,14 +1655,15 @@
           "winner_amount_abnormal": true,
           "winner_rate": 99.487,
           "participant_count": 1,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00918026&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00918026&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2025-06-05",
           "closing_date": "2025-06-13",
           "is_active": false,
           "days_to_close": -312,
-          "name": "창원경상국립대학교병원 영상의학과 영상검사 원격판독 위탁용역 입찰 재공고",
+          "name": "[2025] 창원경상국립대학교병원 | 원격영상판독 - 영상 (재공고)",
           "name_raw": "창원경상국립대학교병원 영상의학과 영상검사 원격판독 위탁용역 입찰 재공고",
           "bid_no": "R25BK00888201",
           "price_est": 1467572000.0,
@@ -1675,14 +1673,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00888201&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00888201&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2025-05-22",
           "closing_date": "2025-05-30",
           "is_active": false,
           "days_to_close": -326,
-          "name": "창원경상국립대학교병원 영상의학과 영상검사 원격판독 위탁용역",
+          "name": "[2025] 창원경상국립대학교병원 | 원격영상판독 - 영상",
           "name_raw": "창원경상국립대학교병원 영상의학과 영상검사 원격판독 위탁용역",
           "bid_no": "R25BK00863522",
           "price_est": 1467572000.0,
@@ -1692,14 +1691,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00863522&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00863522&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2025-05-12",
           "closing_date": "2025-05-22",
           "is_active": false,
           "days_to_close": -334,
-          "name": "창원경상국립대학교병원 영상의학과 영상검사 원격판독 위탁용역",
+          "name": "[2025] 창원경상국립대학교병원 | 원격영상판독 - 영상",
           "name_raw": "창원경상국립대학교병원 영상의학과 영상검사 원격판독 위탁용역",
           "bid_no": "R25BK00839853",
           "price_est": 1467572000.0,
@@ -1709,14 +1709,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 2,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00839853&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00839853&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2023-06-29",
           "closing_date": "2023-06-29",
           "is_active": false,
           "days_to_close": -1027,
-          "name": "창원경상국립대학교병원 영상검사 MRI 원격판독 위탁용역 수의시담",
+          "name": "[2023] 창원경상국립대학교병원 | 원격영상판독 - MRI",
           "name_raw": "창원경상국립대학교병원 영상검사 MRI 원격판독 위탁용역 수의시담",
           "bid_no": "20230645239",
           "price_est": 1.0,
@@ -1726,14 +1727,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": 100.0,
           "participant_count": 1,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230645239&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230645239&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2023-06-29",
           "closing_date": "2023-06-29",
           "is_active": false,
           "days_to_close": -1027,
-          "name": "창원경상국립대학교병원 영상검사, CT 원격판독 위탁용역 수의시담",
+          "name": "[2023] 창원경상국립대학교병원 | 원격영상판독 - CT",
           "name_raw": "창원경상국립대학교병원 영상검사, CT 원격판독 위탁용역 수의시담",
           "bid_no": "20230645208",
           "price_est": 1.0,
@@ -1743,14 +1745,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": 100.0,
           "participant_count": 1,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230645208&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230645208&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2023-06-26",
           "closing_date": "2023-06-26",
           "is_active": false,
           "days_to_close": -1030,
-          "name": "창원경상국립대학교병원 영상검사 MRI 원격판독 위탁용역 수의시담",
+          "name": "[2023] 창원경상국립대학교병원 | 원격영상판독 - MRI",
           "name_raw": "창원경상국립대학교병원 영상검사 MRI 원격판독 위탁용역 수의시담",
           "bid_no": "20230639304",
           "price_est": 0.0,
@@ -1760,14 +1763,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230639304&bidPbancOrd=002"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230639304&bidPbancOrd=002",
+          "analysis": null
         },
         {
           "date": "2023-06-26",
           "closing_date": "2023-06-26",
           "is_active": false,
           "days_to_close": -1030,
-          "name": "창원경상국립대학교병원 영상검사 MRI 원격판독 위탁용역 수의시담",
+          "name": "[2023] 창원경상국립대학교병원 | 원격영상판독 - MRI",
           "name_raw": "창원경상국립대학교병원 영상검사 MRI 원격판독 위탁용역 수의시담",
           "bid_no": "20230639304",
           "price_est": 0.0,
@@ -1777,14 +1781,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230639304&bidPbancOrd=001"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230639304&bidPbancOrd=001",
+          "analysis": null
         },
         {
           "date": "2023-06-26",
           "closing_date": "2023-06-26",
           "is_active": false,
           "days_to_close": -1030,
-          "name": "창원경상국립대학교병원 영상검사 MRI 원격판독 위탁용역 계약(연간단가계약)",
+          "name": "[2023] 창원경상국립대학교병원 | 원격영상판독 - MRI",
           "name_raw": "창원경상국립대학교병원 영상검사 MRI 원격판독 위탁용역 계약(연간단가계약)",
           "bid_no": "20230639304",
           "price_est": 0.0,
@@ -1794,14 +1799,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230639304&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230639304&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2023-06-14",
           "closing_date": "2023-06-21",
           "is_active": false,
           "days_to_close": -1035,
-          "name": "창원경상국립대학교병원 영상검사 일반영상, CT 원격판독 위탁용역 계약 긴급입찰공고",
+          "name": "[2023] 창원경상국립대학교병원 | 원격영상판독 - CT (긴급)",
           "name_raw": "창원경상국립대학교병원 영상검사 일반영상, CT 원격판독 위탁용역 계약 긴급입찰공고",
           "bid_no": "20230621349",
           "price_est": 821945000.0,
@@ -1811,7 +1817,8 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 2,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230621349&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230621349&bidPbancOrd=000",
+          "analysis": null
         }
       ]
     },
@@ -1895,6 +1902,9 @@
       "avg_winner_amount": null,
       "avg_rate": null,
       "avg_participants": 0.0,
+      "last_price_est": 978000000.0,
+      "last_winner_rate": null,
+      "last_bid_date": "2026-02-27",
       "past_winners": [],
       "forecast": {
         "date": "2026-05-24",
@@ -1907,7 +1917,7 @@
           "closing_date": "2026-03-10",
           "is_active": false,
           "days_to_close": -42,
-          "name": "2026년 의료영상 외주판독 위탁용역",
+          "name": "[2026] 전남대학교병원 | 원격영상판독 - 의료영상",
           "name_raw": "2026년 의료영상 외주판독 위탁용역",
           "bid_no": "R26BK01360281",
           "price_est": 978000000.0,
@@ -1917,14 +1927,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01360281&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01360281&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2025-01-23",
           "closing_date": "2025-02-04",
           "is_active": false,
           "days_to_close": -441,
-          "name": "2025년 의료영상 원격판독 위탁용역(재공고)",
+          "name": "[2025] 전남대학교병원 | 원격영상판독 - 의료영상 (재공고)",
           "name_raw": "2025년 의료영상 원격판독 위탁용역(재공고)",
           "bid_no": "R25BK00600678",
           "price_est": 1038720000.0,
@@ -1934,7 +1945,8 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00600678&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00600678&bidPbancOrd=000",
+          "analysis": null
         }
       ],
       "actual_count_in_window": 0,
@@ -1946,7 +1958,7 @@
           "closing_date": "2026-03-10",
           "is_active": false,
           "days_to_close": -42,
-          "name": "2026년 의료영상 외주판독 위탁용역",
+          "name": "[2026] 전남대학교병원 | 원격영상판독 - 의료영상",
           "name_raw": "2026년 의료영상 외주판독 위탁용역",
           "bid_no": "R26BK01360281",
           "price_est": 978000000.0,
@@ -1956,14 +1968,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01360281&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01360281&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2025-01-23",
           "closing_date": "2025-02-04",
           "is_active": false,
           "days_to_close": -441,
-          "name": "2025년 의료영상 원격판독 위탁용역(재공고)",
+          "name": "[2025] 전남대학교병원 | 원격영상판독 - 의료영상 (재공고)",
           "name_raw": "2025년 의료영상 원격판독 위탁용역(재공고)",
           "bid_no": "R25BK00600678",
           "price_est": 1038720000.0,
@@ -1973,14 +1986,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00600678&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00600678&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2025-01-14",
           "closing_date": "2025-01-22",
           "is_active": false,
           "days_to_close": -454,
-          "name": "2025년 의료영상 원격판독 위탁용역",
+          "name": "[2025] 전남대학교병원 | 원격영상판독 - 의료영상",
           "name_raw": "2025년 의료영상 원격판독 위탁용역",
           "bid_no": "R25BK00580124",
           "price_est": 944290909.0,
@@ -1990,14 +2004,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00580124&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00580124&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2024-12-24",
           "closing_date": "2024-12-31",
           "is_active": false,
           "days_to_close": -476,
-          "name": "2025년 의료영상 원격판독 위탁 용역(재공고)",
+          "name": "[2024] 전남대학교병원 | 원격영상판독 - 의료영상 (재공고)",
           "name_raw": "2025년 의료영상 원격판독 위탁 용역(재공고)",
           "bid_no": "20241238824",
           "price_est": 944290909.0,
@@ -2007,14 +2022,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20241238824&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20241238824&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2024-12-09",
           "closing_date": "2024-12-17",
           "is_active": false,
           "days_to_close": -490,
-          "name": "2025년 의료영상 원격판독 위탁 용역",
+          "name": "[2024] 전남대학교병원 | 원격영상판독 - 의료영상",
           "name_raw": "2025년 의료영상 원격판독 위탁 용역",
           "bid_no": "20241214466",
           "price_est": 944290909.0,
@@ -2024,14 +2040,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20241214466&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20241214466&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2024-03-28",
           "closing_date": "2024-04-03",
           "is_active": false,
           "days_to_close": -748,
-          "name": "의료영상(두부CT,척추CT/MRI) 원격판독 위탁 용역",
+          "name": "[2024] 전남대학교병원 | 원격영상판독 - MRI",
           "name_raw": "의료영상(두부CT,척추CT/MRI) 원격판독 위탁 용역",
           "bid_no": "20240348103",
           "price_est": 431818182.0,
@@ -2041,14 +2058,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240348103&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240348103&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2024-03-14",
           "closing_date": "2024-03-20",
           "is_active": false,
           "days_to_close": -762,
-          "name": "의료영상(두부CT,척추CT/MRI) 원격판독 위탁 용역(재공고)",
+          "name": "[2024] 전남대학교병원 | 원격영상판독 - MRI (재공고)",
           "name_raw": "의료영상(두부CT,척추CT/MRI) 원격판독 위탁 용역(재공고)",
           "bid_no": "20240323129",
           "price_est": 431818182.0,
@@ -2058,14 +2076,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240323129&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240323129&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2024-03-06",
           "closing_date": "2024-03-14",
           "is_active": false,
           "days_to_close": -768,
-          "name": "의료영상(두부CT,척추CT/MRI) 원격판독 위탁 용역",
+          "name": "[2024] 전남대학교병원 | 원격영상판독 - MRI",
           "name_raw": "의료영상(두부CT,척추CT/MRI) 원격판독 위탁 용역",
           "bid_no": "20240242320",
           "price_est": 431818182.0,
@@ -2075,14 +2094,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240242320&bidPbancOrd=001"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240242320&bidPbancOrd=001",
+          "analysis": null
         },
         {
           "date": "2024-02-29",
           "closing_date": "2024-03-08",
           "is_active": false,
           "days_to_close": -774,
-          "name": "의료영상(두부CT,척추CT/MRI) 원격판독 위탁 용역",
+          "name": "[2024] 전남대학교병원 | 원격영상판독 - MRI",
           "name_raw": "의료영상(두부CT,척추CT/MRI) 원격판독 위탁 용역",
           "bid_no": "20240242320",
           "price_est": 431818182.0,
@@ -2092,14 +2112,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240242320&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240242320&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2024-02-29",
           "closing_date": "2024-03-08",
           "is_active": false,
           "days_to_close": -774,
-          "name": "의료영상(두부CT,척추CT/MRI) 원격판독 위탁 용역",
+          "name": "[2024] 전남대학교병원 | 원격영상판독 - MRI",
           "name_raw": "의료영상(두부CT,척추CT/MRI) 원격판독 위탁 용역",
           "bid_no": "20240242155",
           "price_est": 431818182.0,
@@ -2109,7 +2130,8 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240242155&bidPbancOrd=001"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240242155&bidPbancOrd=001",
+          "analysis": null
         }
       ]
     },
@@ -2158,6 +2180,9 @@
       "avg_winner_amount": null,
       "avg_rate": 95.9,
       "avg_participants": 0.7,
+      "last_price_est": 1.0,
+      "last_winner_rate": 95.895,
+      "last_bid_date": "2021-05-28",
       "past_winners": [
         {
           "name": "대한의료영상의학과의원",
@@ -2175,7 +2200,7 @@
           "closing_date": "2025-06-04",
           "is_active": false,
           "days_to_close": -321,
-          "name": "(세종) 2025년 영상판독 104종 연간단가계약 (재공고)",
+          "name": "[2025] 세종충남대학교병원 | 원격영상판독 - 영상 (재공고, 연간단가, 단가계약)",
           "name_raw": "(세종) 2025년 영상판독 104종 연간단가계약 (재공고)",
           "bid_no": "R25BK00875783",
           "price_est": 1.0,
@@ -2185,14 +2210,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00875783&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00875783&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2025-05-20",
           "closing_date": "2025-05-28",
           "is_active": false,
           "days_to_close": -328,
-          "name": "(세종) 2025년 영상판독 104종 연간단가계약",
+          "name": "[2025] 세종충남대학교병원 | 원격영상판독 - 영상 (연간단가, 단가계약)",
           "name_raw": "(세종) 2025년 영상판독 104종 연간단가계약",
           "bid_no": "R25BK00856020",
           "price_est": 1.0,
@@ -2202,7 +2228,8 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00856020&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00856020&bidPbancOrd=000",
+          "analysis": null
         }
       ],
       "actual_count_in_window": 0,
@@ -2214,7 +2241,7 @@
           "closing_date": "2025-06-04",
           "is_active": false,
           "days_to_close": -321,
-          "name": "(세종) 2025년 영상판독 104종 연간단가계약 (재공고)",
+          "name": "[2025] 세종충남대학교병원 | 원격영상판독 - 영상 (재공고, 연간단가, 단가계약)",
           "name_raw": "(세종) 2025년 영상판독 104종 연간단가계약 (재공고)",
           "bid_no": "R25BK00875783",
           "price_est": 1.0,
@@ -2224,14 +2251,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00875783&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00875783&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2025-05-20",
           "closing_date": "2025-05-28",
           "is_active": false,
           "days_to_close": -328,
-          "name": "(세종) 2025년 영상판독 104종 연간단가계약",
+          "name": "[2025] 세종충남대학교병원 | 원격영상판독 - 영상 (연간단가, 단가계약)",
           "name_raw": "(세종) 2025년 영상판독 104종 연간단가계약",
           "bid_no": "R25BK00856020",
           "price_est": 1.0,
@@ -2241,14 +2269,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00856020&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R25BK00856020&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2024-04-09",
           "closing_date": "2024-04-15",
           "is_active": false,
           "days_to_close": -736,
-          "name": "(세종) 2024년 원격영상판독 연간단가계약 103품목(재공고)",
+          "name": "[2024] 세종충남대학교병원 | 원격영상판독 - 영상 (재공고, 연간단가, 단가계약)",
           "name_raw": "(세종) 2024년 원격영상판독 연간단가계약 103품목(재공고)",
           "bid_no": "20240416247",
           "price_est": 1.0,
@@ -2258,14 +2287,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240416247&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240416247&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2024-04-01",
           "closing_date": "2024-04-09",
           "is_active": false,
           "days_to_close": -742,
-          "name": "(세종) 2024년 원격영상판독 연간단가계약(평일,평일응급) 103품목",
+          "name": "[2024] 세종충남대학교병원 | 원격영상판독 - 영상 (연간단가, 단가계약)",
           "name_raw": "(세종) 2024년 원격영상판독 연간단가계약(평일,평일응급) 103품목",
           "bid_no": "20240401195",
           "price_est": 1.0,
@@ -2275,14 +2305,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240401195&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240401195&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2024-04-01",
           "closing_date": "2024-04-03",
           "is_active": false,
           "days_to_close": -748,
-          "name": "2024년 원격영상판독 연간단가계약 103품목",
+          "name": "[2024] 세종충남대학교병원 | 원격영상판독 - 영상 (연간단가, 단가계약)",
           "name_raw": "2024년 원격영상판독 연간단가계약 103품목",
           "bid_no": "20240343304",
           "price_est": 1.0,
@@ -2292,14 +2323,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240343304&bidPbancOrd=001"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240343304&bidPbancOrd=001",
+          "analysis": null
         },
         {
           "date": "2024-03-26",
           "closing_date": "2024-04-03",
           "is_active": false,
           "days_to_close": -748,
-          "name": "2024년 원격영상판독 연간단가계약 103품목",
+          "name": "[2024] 세종충남대학교병원 | 원격영상판독 - 영상 (연간단가, 단가계약)",
           "name_raw": "2024년 원격영상판독 연간단가계약 103품목",
           "bid_no": "20240343304",
           "price_est": 1.0,
@@ -2309,14 +2341,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240343304&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20240343304&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2023-06-05",
           "closing_date": "2023-06-16",
           "is_active": false,
           "days_to_close": -1040,
-          "name": "2023년 원격영상판독 연간단가계약",
+          "name": "[2023] 세종충남대학교병원 | 원격영상판독 - 영상 (연간단가, 단가계약)",
           "name_raw": "2023년 원격영상판독 연간단가계약",
           "bid_no": "20230605704",
           "price_est": 1049965064.0,
@@ -2326,14 +2359,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230605704&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230605704&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2023-05-24",
           "closing_date": "2023-06-05",
           "is_active": false,
           "days_to_close": -1051,
-          "name": "2023년 원격영상판독 연간단가계약",
+          "name": "[2023] 세종충남대학교병원 | 원격영상판독 - 영상 (연간단가, 단가계약)",
           "name_raw": "2023년 원격영상판독 연간단가계약",
           "bid_no": "20230537199",
           "price_est": 1049965064.0,
@@ -2343,14 +2377,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230537199&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230537199&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2022-07-04",
           "closing_date": "2022-07-11",
           "is_active": false,
           "days_to_close": -1380,
-          "name": "(긴급)2022년 원격영상판독(휴일, 야간, 응급) 연간단가계약 재공고",
+          "name": "[2022] 세종충남대학교병원 | 원격영상판독 - 영상 (재공고, 긴급, 연간단가, 단가계약)",
           "name_raw": "(긴급)2022년 원격영상판독(휴일, 야간, 응급) 연간단가계약 재공고",
           "bid_no": "20220703133",
           "price_est": 1.0,
@@ -2360,14 +2395,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20220703133&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20220703133&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2022-06-28",
           "closing_date": "2022-07-04",
           "is_active": false,
           "days_to_close": -1387,
-          "name": "(긴급)2022년 원격영상판독(휴일, 야간, 응급) 연간단가계약",
+          "name": "[2022] 세종충남대학교병원 | 원격영상판독 - 영상 (긴급, 연간단가, 단가계약)",
           "name_raw": "(긴급)2022년 원격영상판독(휴일, 야간, 응급) 연간단가계약",
           "bid_no": "20220639186",
           "price_est": 1.0,
@@ -2377,7 +2413,8 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20220639186&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20220639186&bidPbancOrd=000",
+          "analysis": null
         }
       ]
     },
@@ -2406,6 +2443,9 @@
       "avg_winner_amount": null,
       "avg_rate": null,
       "avg_participants": 0.0,
+      "last_price_est": 0.0,
+      "last_winner_rate": null,
+      "last_bid_date": "2023-05-18",
       "past_winners": [],
       "forecast": {
         "date": "2026-05-18",
@@ -2418,7 +2458,7 @@
           "closing_date": "2023-05-24",
           "is_active": false,
           "days_to_close": -1063,
-          "name": "경희대학교병원 두경부 CT 및 외주 판독 사업자 선정",
+          "name": "[2023] 경희의료원 | 원격영상판독 - CT",
           "name_raw": "경희대학교병원 두경부 CT 및 외주 판독 사업자 선정",
           "bid_no": "20230527920",
           "price_est": 0.0,
@@ -2428,14 +2468,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230527920&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230527920&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2023-05-11",
           "closing_date": "2023-05-17",
           "is_active": false,
           "days_to_close": -1070,
-          "name": "경희대학교병원 두경부 CT 및 외주 판독 사업자 선정",
+          "name": "[2023] 경희의료원 | 원격영상판독 - CT",
           "name_raw": "경희대학교병원 두경부 CT 및 외주 판독 사업자 선정",
           "bid_no": "20230516957",
           "price_est": 0.0,
@@ -2445,7 +2486,8 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230516957&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230516957&bidPbancOrd=000",
+          "analysis": null
         }
       ],
       "actual_count_in_window": 0,
@@ -2457,7 +2499,7 @@
           "closing_date": "2023-05-24",
           "is_active": false,
           "days_to_close": -1063,
-          "name": "경희대학교병원 두경부 CT 및 외주 판독 사업자 선정",
+          "name": "[2023] 경희의료원 | 원격영상판독 - CT",
           "name_raw": "경희대학교병원 두경부 CT 및 외주 판독 사업자 선정",
           "bid_no": "20230527920",
           "price_est": 0.0,
@@ -2467,14 +2509,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230527920&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230527920&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2023-05-11",
           "closing_date": "2023-05-17",
           "is_active": false,
           "days_to_close": -1070,
-          "name": "경희대학교병원 두경부 CT 및 외주 판독 사업자 선정",
+          "name": "[2023] 경희의료원 | 원격영상판독 - CT",
           "name_raw": "경희대학교병원 두경부 CT 및 외주 판독 사업자 선정",
           "bid_no": "20230516957",
           "price_est": 0.0,
@@ -2484,14 +2527,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230516957&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20230516957&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2022-02-22",
           "closing_date": "2022-03-04",
           "is_active": false,
           "days_to_close": -1509,
-          "name": "경희대학교병원 영상의학과 흉부 X-ray 및 CT 외부판독 용역",
+          "name": "[2022] 경희의료원 | 원격영상판독 - 흉부X-ray/CT/X-ray",
           "name_raw": "경희대학교병원 영상의학과 흉부 X-ray 및 CT 외부판독 용역",
           "bid_no": "20220229923",
           "price_est": 0.0,
@@ -2501,14 +2545,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20220229923&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20220229923&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2022-02-07",
           "closing_date": "2022-02-22",
           "is_active": false,
           "days_to_close": -1519,
-          "name": "경희대학교병원 영상의학과 흉부 X-ray 및 CT 외부판독 용역",
+          "name": "[2022] 경희의료원 | 원격영상판독 - 흉부X-ray/CT/X-ray",
           "name_raw": "경희대학교병원 영상의학과 흉부 X-ray 및 CT 외부판독 용역",
           "bid_no": "20220204898",
           "price_est": 0.0,
@@ -2518,14 +2563,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20220204898&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20220204898&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2021-04-20",
           "closing_date": "2021-04-29",
           "is_active": false,
           "days_to_close": -1818,
-          "name": "경희대학교병원 영상의학과 흉부 CR 및 CT 외주판독 용역",
+          "name": "[2021] 경희의료원 | 원격영상판독 - CR/CT",
           "name_raw": "경희대학교병원 영상의학과 흉부 CR 및 CT 외주판독 용역",
           "bid_no": "20210429753",
           "price_est": 0.0,
@@ -2535,14 +2581,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20210429753&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20210429753&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2020-03-04",
           "closing_date": "2020-03-11",
           "is_active": false,
           "days_to_close": -2232,
-          "name": "경희대학교병원 영상의학과 흉부 X-ray 및 CT 외부판독 용역",
+          "name": "[2020] 경희의료원 | 원격영상판독 - 흉부X-ray/CT/X-ray",
           "name_raw": "경희대학교병원 영상의학과 흉부 X-ray 및 CT 외부판독 용역",
           "bid_no": "20200305694",
           "price_est": 0.0,
@@ -2552,14 +2599,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20200305694&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20200305694&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2020-02-18",
           "closing_date": "2020-02-25",
           "is_active": false,
           "days_to_close": -2247,
-          "name": "경희대학교병원 영상의학과 흉부 X-ray 및 CT 외부판독 용역",
+          "name": "[2020] 경희의료원 | 원격영상판독 - 흉부X-ray/CT/X-ray",
           "name_raw": "경희대학교병원 영상의학과 흉부 X-ray 및 CT 외부판독 용역",
           "bid_no": "20200228046",
           "price_est": 0.0,
@@ -2569,7 +2617,8 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 0,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20200228046&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20200228046&bidPbancOrd=000",
+          "analysis": null
         }
       ]
     },
@@ -2597,6 +2646,9 @@
       "avg_winner_amount": 71507200.0,
       "avg_rate": 89.38,
       "avg_participants": 2.0,
+      "last_price_est": 80000000.0,
+      "last_winner_rate": 89.384,
+      "last_bid_date": "2020-05-18",
       "past_winners": [
         {
           "name": "한국영상의원",
@@ -2614,7 +2666,7 @@
           "closing_date": "2020-05-26",
           "is_active": false,
           "days_to_close": -2156,
-          "name": "영상의학과 원격판독 단가계약 용역",
+          "name": "[2020] 동부병원 | 원격영상판독 - 영상 (단가계약)",
           "name_raw": "영상의학과 원격판독 단가계약 용역",
           "bid_no": "20200519853",
           "price_est": 80000000.0,
@@ -2624,14 +2676,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": 89.384,
           "participant_count": 4,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20200519853&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20200519853&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2019-05-23",
           "closing_date": "2019-05-29",
           "is_active": false,
           "days_to_close": -2519,
-          "name": "동부병원 영상의학과 원격판독 용역(단가계약) 재공고",
+          "name": "[2019] 동부병원 | 원격영상판독 - 영상 (재공고, 단가계약)",
           "name_raw": "동부병원 영상의학과 원격판독 용역(단가계약) 재공고",
           "bid_no": "20190532413",
           "price_est": 21818181.0,
@@ -2641,7 +2694,8 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 1,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20190532413&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20190532413&bidPbancOrd=000",
+          "analysis": null
         }
       ],
       "actual_count_in_window": 0,
@@ -2653,7 +2707,7 @@
           "closing_date": "2020-05-26",
           "is_active": false,
           "days_to_close": -2156,
-          "name": "영상의학과 원격판독 단가계약 용역",
+          "name": "[2020] 동부병원 | 원격영상판독 - 영상 (단가계약)",
           "name_raw": "영상의학과 원격판독 단가계약 용역",
           "bid_no": "20200519853",
           "price_est": 80000000.0,
@@ -2663,14 +2717,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": 89.384,
           "participant_count": 4,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20200519853&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20200519853&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2019-05-23",
           "closing_date": "2019-05-29",
           "is_active": false,
           "days_to_close": -2519,
-          "name": "동부병원 영상의학과 원격판독 용역(단가계약) 재공고",
+          "name": "[2019] 동부병원 | 원격영상판독 - 영상 (재공고, 단가계약)",
           "name_raw": "동부병원 영상의학과 원격판독 용역(단가계약) 재공고",
           "bid_no": "20190532413",
           "price_est": 21818181.0,
@@ -2680,14 +2735,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 1,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20190532413&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20190532413&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2019-05-16",
           "closing_date": "2019-05-22",
           "is_active": false,
           "days_to_close": -2526,
-          "name": "동부병원 영상의학과 원격판독 용역(단가계약)",
+          "name": "[2019] 동부병원 | 원격영상판독 - 영상 (단가계약)",
           "name_raw": "동부병원 영상의학과 원격판독 용역(단가계약)",
           "bid_no": "20190518779",
           "price_est": 21818181.0,
@@ -2697,14 +2753,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": 1,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20190518779&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20190518779&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2018-05-23",
           "closing_date": "2018-05-29",
           "is_active": false,
           "days_to_close": -2884,
-          "name": "동부병원 영상의학과 원격판독 용역(단가계약)",
+          "name": "[2018] 동부병원 | 원격영상판독 - 영상 (단가계약)",
           "name_raw": "동부병원 영상의학과 원격판독 용역(단가계약)",
           "bid_no": "20180528352",
           "price_est": 29818181.0,
@@ -2714,14 +2771,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20180528352&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20180528352&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2016-05-16",
           "closing_date": "2016-05-20",
           "is_active": false,
           "days_to_close": -3623,
-          "name": "영상의학과 원격판독 용역 전자수의 견적공고",
+          "name": "[2016] 동부병원 | 원격영상판독 - 영상 (수의계약)",
           "name_raw": "영상의학과 원격판독 용역 전자수의 견적공고",
           "bid_no": "20160515236",
           "price_est": 1.0,
@@ -2731,14 +2789,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20160515236&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20160515236&bidPbancOrd=000",
+          "analysis": null
         },
         {
           "date": "2016-05-09",
           "closing_date": "2016-05-13",
           "is_active": false,
           "days_to_close": -3630,
-          "name": "영상의학과 원격판독 용역 전자수의 견적공고",
+          "name": "[2016] 동부병원 | 원격영상판독 - 영상 (수의계약)",
           "name_raw": "영상의학과 원격판독 용역 전자수의 견적공고",
           "bid_no": "20160506875",
           "price_est": 1.0,
@@ -2748,7 +2807,8 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20160506875&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20160506875&bidPbancOrd=000",
+          "analysis": null
         }
       ]
     },
@@ -2776,6 +2836,9 @@
       "avg_winner_amount": null,
       "avg_rate": null,
       "avg_participants": null,
+      "last_price_est": 611000000.0,
+      "last_winner_rate": null,
+      "last_bid_date": "2022-05-18",
       "past_winners": [],
       "forecast": {
         "date": "2026-05-18",
@@ -2788,7 +2851,7 @@
           "closing_date": "2022-06-03",
           "is_active": false,
           "days_to_close": -1418,
-          "name": "OO영상판독체계 노후 교체 사업",
+          "name": "[2022] 인천지방조달청 | 원격영상판독 - 영상",
           "name_raw": "OO영상판독체계 노후 교체 사업",
           "bid_no": "20220500391",
           "price_est": 611000000.0,
@@ -2798,14 +2861,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20220500391&bidPbancOrd=001"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20220500391&bidPbancOrd=001",
+          "analysis": null
         },
         {
           "date": "2022-05-04",
           "closing_date": "2022-06-03",
           "is_active": false,
           "days_to_close": -1418,
-          "name": "OO영상판독체계 노후 교체 사업",
+          "name": "[2022] 인천지방조달청 | 원격영상판독 - 영상",
           "name_raw": "OO영상판독체계 노후 교체 사업",
           "bid_no": "20220500391",
           "price_est": 611000000.0,
@@ -2815,7 +2879,8 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20220500391&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20220500391&bidPbancOrd=000",
+          "analysis": null
         }
       ],
       "actual_count_in_window": 0,
@@ -2827,7 +2892,7 @@
           "closing_date": "2022-06-03",
           "is_active": false,
           "days_to_close": -1418,
-          "name": "OO영상판독체계 노후 교체 사업",
+          "name": "[2022] 인천지방조달청 | 원격영상판독 - 영상",
           "name_raw": "OO영상판독체계 노후 교체 사업",
           "bid_no": "20220500391",
           "price_est": 611000000.0,
@@ -2837,14 +2902,15 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20220500391&bidPbancOrd=001"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20220500391&bidPbancOrd=001",
+          "analysis": null
         },
         {
           "date": "2022-05-04",
           "closing_date": "2022-06-03",
           "is_active": false,
           "days_to_close": -1418,
-          "name": "OO영상판독체계 노후 교체 사업",
+          "name": "[2022] 인천지방조달청 | 원격영상판독 - 영상",
           "name_raw": "OO영상판독체계 노후 교체 사업",
           "bid_no": "20220500391",
           "price_est": 611000000.0,
@@ -2854,7 +2920,8 @@
           "winner_amount_abnormal": false,
           "winner_rate": null,
           "participant_count": null,
-          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20220500391&bidPbancOrd=000"
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20220500391&bidPbancOrd=000",
+          "analysis": null
         }
       ]
     }
