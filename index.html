@@ -591,6 +591,13 @@ function renderActiveCard(c, idx) {
   if (an && an.recommend_reason) {
     detailRows.push(`<div class="ac-row"><span class="ac-key">판단 근거</span><p>${fmt.esc(an.recommend_reason)}</p></div>`);
   }
+  // 지난 낙찰자(=가장 최근 경쟁자). 가장 눈에 띄게 최상단으로.
+  if (c.last_winner_name) {
+    const when = c.last_bid_date ? ` <span style="color:var(--muted)">(${c.last_bid_date.slice(0, 7)})</span>` : '';
+    const amt = c.last_winner_amount != null ? ` · ${fmt.money(c.last_winner_amount)}` : '';
+    const rate = c.last_winner_rate != null ? ` · 낙찰률 ${fmt.rate(c.last_winner_rate)}` : '';
+    detailRows.unshift(`<div class="ac-row"><span class="ac-key">지난 낙찰자</span><p><b>${fmt.esc(c.last_winner_name)}</b>${when}${amt}${rate}</p></div>`);
+  }
 
   const noteText = NOTES[c.org];
   const noteBadge = noteText ? `<span class="note-badge" title="${fmt.esc(noteText)}">📝 메모</span>` : '';
@@ -614,15 +621,14 @@ function renderActiveCard(c, idx) {
         </div>
       </div>
 
-      ${an ? `
-        <div class="cond-badges">${badges.join('')}</div>
-        <div class="active-details">${detailRows.join('')}</div>
-      ` : `
+      ${an && badges.length ? `<div class="cond-badges">${badges.join('')}</div>` : ''}
+      ${!an ? `
         <div class="analysis-missing strong">
           🤖 첨부 분석 대기/실패 — 수동 확인 필요<br>
           <span style="font-weight:500">권장도·상근·실적 조건이 추출되지 않아 대시보드 표시 불가. bid_analyzer 재실행 필요.</span>
         </div>
-      `}
+      ` : ''}
+      ${detailRows.length ? `<div class="active-details">${detailRows.join('')}</div>` : ''}
 
       <div class="active-footer">
         <span class="active-footnote">

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-21T17:51:45",
+  "generated_at": "2026-04-21T19:29:44",
   "today": "2026-04-21",
   "window": {
     "start": "2026-03-10",
@@ -7,7 +7,7 @@
     "lookback_days": 42,
     "lookahead_days": 42
   },
-  "total_cards": 11,
+  "total_cards": 12,
   "cards": [
     {
       "org": "부산대학교병원",
@@ -78,6 +78,8 @@
       "last_price_est": 1169222772.0,
       "last_winner_rate": 82.402,
       "last_bid_date": "2021-04-12",
+      "last_winner_name": "대한의료영상의학과의원",
+      "last_winner_amount": 963462949.0,
       "past_winners": [
         {
           "name": "대한의료영상의학과의원",
@@ -449,6 +451,8 @@
       "last_price_est": 1471536000.0,
       "last_winner_rate": null,
       "last_bid_date": "2026-04-17",
+      "last_winner_name": null,
+      "last_winner_amount": null,
       "past_winners": [
         {
           "name": "",
@@ -759,6 +763,281 @@
       ]
     },
     {
+      "org": "조달청 서울지방조달청",
+      "modality": "초음파·의료영상·영상",
+      "confidence": "유력",
+      "raw_confidence": "유력",
+      "stale": false,
+      "long_inactive": false,
+      "irregular": true,
+      "recurring_months": [
+        10,
+        11,
+        12
+      ],
+      "recurring_dates": [
+        {
+          "date": "2026-10-27",
+          "month": 10,
+          "past_count": 2,
+          "avg_day": 27
+        },
+        {
+          "date": "2026-11-19",
+          "month": 11,
+          "past_count": 13,
+          "avg_day": 19
+        },
+        {
+          "date": "2026-12-10",
+          "month": 12,
+          "past_count": 12,
+          "avg_day": 10
+        }
+      ],
+      "nearest_forecast_date": null,
+      "months_since_last": 0.0,
+      "cycle_months": 12,
+      "total_bids": 29,
+      "annual_freq": 3.08,
+      "series_count": 3,
+      "first_date": "2016-11-21",
+      "last_date": "2026-04-21",
+      "avg_price_est": 472307379.0,
+      "avg_winner_amount": 689405899.0,
+      "avg_rate": 97.82,
+      "avg_participants": 0.8,
+      "last_price_est": 1038000000.0,
+      "last_winner_rate": 98.653,
+      "last_bid_date": "2024-11-08",
+      "last_winner_name": "헤셀의원",
+      "last_winner_amount": 1024018140.0,
+      "past_winners": [
+        {
+          "name": "헤셀의원",
+          "count": 4
+        },
+        {
+          "name": "휴먼영상의학과의원",
+          "count": 1
+        },
+        {
+          "name": "",
+          "count": 1
+        }
+      ],
+      "forecast": {
+        "date": "2026-10-27",
+        "days_from_today": 189,
+        "in_window": false
+      },
+      "actual": [
+        {
+          "date": "2026-04-21",
+          "closing_date": "2026-05-08",
+          "is_active": true,
+          "days_to_close": 17,
+          "name": "‘2026년 문화PD 영상 크리에이터 운영 및 신기술 활용 콘텐츠 제작",
+          "name_raw": "‘2026년 문화PD 영상 크리에이터 운영 및 신기술 활용 콘텐츠 제작",
+          "bid_no": "R26BK01479239",
+          "price_est": 258181818.0,
+          "winner": null,
+          "winner_amount": null,
+          "winner_amount_raw": null,
+          "winner_amount_abnormal": false,
+          "winner_rate": null,
+          "participant_count": null,
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01479239&bidPbancOrd=000",
+          "analysis": null
+        }
+      ],
+      "actual_count_in_window": 1,
+      "has_active_actual": true,
+      "active_actual_count": 1,
+      "history": [
+        {
+          "date": "2026-04-21",
+          "closing_date": "2026-05-08",
+          "is_active": true,
+          "days_to_close": 17,
+          "name": "‘2026년 문화PD 영상 크리에이터 운영 및 신기술 활용 콘텐츠 제작",
+          "name_raw": "‘2026년 문화PD 영상 크리에이터 운영 및 신기술 활용 콘텐츠 제작",
+          "bid_no": "R26BK01479239",
+          "price_est": 258181818.0,
+          "winner": null,
+          "winner_amount": null,
+          "winner_amount_raw": null,
+          "winner_amount_abnormal": false,
+          "winner_rate": null,
+          "participant_count": null,
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01479239&bidPbancOrd=000",
+          "analysis": null
+        },
+        {
+          "date": "2024-11-08",
+          "closing_date": "2024-11-13",
+          "is_active": false,
+          "days_to_close": -524,
+          "name": "[2024] 서울지방조달청 | 원격영상판독 - 초음파",
+          "name_raw": "의료영상 원격(외주) 판독 및 초음파 검사 용역 계약 요청(2025년~ 2026년)",
+          "bid_no": "20241110416",
+          "price_est": 1038000000.0,
+          "winner": "헤셀의원",
+          "winner_amount": 1024018140.0,
+          "winner_amount_raw": 999500000.0,
+          "winner_amount_abnormal": false,
+          "winner_rate": 98.653,
+          "participant_count": 1,
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20241110416&bidPbancOrd=000",
+          "analysis": null
+        },
+        {
+          "date": "2024-10-28",
+          "closing_date": "2024-11-06",
+          "is_active": false,
+          "days_to_close": -531,
+          "name": "[2024] 서울지방조달청 | 원격영상판독 - 초음파",
+          "name_raw": "의료영상 원격(외주) 판독 및 초음파 검사 용역 계약 요청(2025년~ 2026년)",
+          "bid_no": "20241028781",
+          "price_est": 1038000000.0,
+          "winner": null,
+          "winner_amount": null,
+          "winner_amount_raw": null,
+          "winner_amount_abnormal": false,
+          "winner_rate": null,
+          "participant_count": 0,
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20241028781&bidPbancOrd=000",
+          "analysis": null
+        },
+        {
+          "date": "2022-11-23",
+          "closing_date": "2022-11-25",
+          "is_active": false,
+          "days_to_close": -1243,
+          "name": "[2022] 서울지방조달청 | 원격영상판독 - 초음파",
+          "name_raw": "2023년~2024년도 경찰병원 의료영상 및 초음파 원격(외주) 판독 용역",
+          "bid_no": "20221134648",
+          "price_est": 1038000000.0,
+          "winner": "헤셀의원",
+          "winner_amount": 1019990700.0,
+          "winner_amount_raw": 999100000.0,
+          "winner_amount_abnormal": false,
+          "winner_rate": 98.265,
+          "participant_count": 1,
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20221134648&bidPbancOrd=000",
+          "analysis": null
+        },
+        {
+          "date": "2022-10-26",
+          "closing_date": "2022-11-11",
+          "is_active": false,
+          "days_to_close": -1257,
+          "name": "[2022] 서울지방조달청 | 원격영상판독 - 초음파",
+          "name_raw": "2023년~2024년도 경찰병원 의료영상 및 초음파 원격(외주) 판독 용역",
+          "bid_no": "20221030141",
+          "price_est": 1038000000.0,
+          "winner": null,
+          "winner_amount": null,
+          "winner_amount_raw": null,
+          "winner_amount_abnormal": false,
+          "winner_rate": null,
+          "participant_count": 0,
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20221030141&bidPbancOrd=000",
+          "analysis": null
+        },
+        {
+          "date": "2022-01-18",
+          "closing_date": "2022-01-27",
+          "is_active": false,
+          "days_to_close": -1545,
+          "name": "[2022] 서울지방조달청 | 원격영상판독 - 초음파",
+          "name_raw": "2022년도 경찰병원 의료영상 및 초음파 원격(외주) 판독 용역",
+          "bid_no": "20220115908",
+          "price_est": 480900000.0,
+          "winner": "헤셀의원",
+          "winner_amount": 475100346.0,
+          "winner_amount_raw": 464490000.0,
+          "winner_amount_abnormal": false,
+          "winner_rate": 98.794,
+          "participant_count": 2,
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20220115908&bidPbancOrd=000",
+          "analysis": null
+        },
+        {
+          "date": "2021-12-03",
+          "closing_date": "2021-12-10",
+          "is_active": false,
+          "days_to_close": -1593,
+          "name": "[2021] 서울지방조달청 | 원격영상판독 - 초음파",
+          "name_raw": "2022년도 경찰병원 의료영상 및 초음파 원격(외주) 판독 용역",
+          "bid_no": "20211204646",
+          "price_est": 484900000.0,
+          "winner": null,
+          "winner_amount": null,
+          "winner_amount_raw": null,
+          "winner_amount_abnormal": false,
+          "winner_rate": null,
+          "participant_count": 0,
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20211204646&bidPbancOrd=000",
+          "analysis": null
+        },
+        {
+          "date": "2021-11-25",
+          "closing_date": "2021-12-02",
+          "is_active": false,
+          "days_to_close": -1601,
+          "name": "[2021] 서울지방조달청 | 원격영상판독 - 초음파",
+          "name_raw": "2022년도 경찰병원 의료영상 및 초음파 원격(외주) 판독 용역",
+          "bid_no": "20211118988",
+          "price_est": 484900000.0,
+          "winner": null,
+          "winner_amount": null,
+          "winner_amount_raw": null,
+          "winner_amount_abnormal": false,
+          "winner_rate": null,
+          "participant_count": 2,
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20211118988&bidPbancOrd=001",
+          "analysis": null
+        },
+        {
+          "date": "2021-11-15",
+          "closing_date": "2021-11-26",
+          "is_active": false,
+          "days_to_close": -1607,
+          "name": "[2021] 서울지방조달청 | 원격영상판독 - 초음파",
+          "name_raw": "2022년도 경찰병원 의료영상 및 초음파 원격(외주) 판독 용역",
+          "bid_no": "20211118988",
+          "price_est": 440818182.0,
+          "winner": null,
+          "winner_amount": null,
+          "winner_amount_raw": null,
+          "winner_amount_abnormal": false,
+          "winner_rate": null,
+          "participant_count": 2,
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20211118988&bidPbancOrd=000",
+          "analysis": null
+        },
+        {
+          "date": "2020-11-10",
+          "closing_date": "2020-11-20",
+          "is_active": false,
+          "days_to_close": -1978,
+          "name": "[2020] 서울지방조달청 | 원격영상판독 - 초음파",
+          "name_raw": "2021년도 경찰병원 의료영상 및 초음파 원격(외주) 판독 용역",
+          "bid_no": "20201101985",
+          "price_est": 484720000.0,
+          "winner": "헤셀의원",
+          "winner_amount": 452796341.0,
+          "winner_amount_raw": 444900000.0,
+          "winner_amount_abnormal": false,
+          "winner_rate": 93.414,
+          "participant_count": 2,
+          "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=20201101985&bidPbancOrd=000",
+          "analysis": null
+        }
+      ]
+    },
+    {
       "org": "경상대학교병원",
       "modality": "영상/CT/MRI",
       "confidence": "유력",
@@ -813,6 +1092,8 @@
       "last_price_est": 1312278000.0,
       "last_winner_rate": 85.767,
       "last_bid_date": "2025-05-13",
+      "last_winner_name": "21세기영상의학과의원",
+      "last_winner_amount": 1125501472.0,
       "past_winners": [
         {
           "name": "21세기영상의학과의원",
@@ -1079,6 +1360,8 @@
       "last_price_est": 114000000.0,
       "last_winner_rate": 85.3,
       "last_bid_date": "2025-04-30",
+      "last_winner_name": "헤셀의원",
+      "last_winner_amount": 97242000.0,
       "past_winners": [
         {
           "name": "헤셀의원",
@@ -1289,6 +1572,8 @@
       "last_price_est": 394698500.0,
       "last_winner_rate": 81.328,
       "last_bid_date": "2025-12-03",
+      "last_winner_name": "리더스영상의학과의원",
+      "last_winner_amount": 321000396.0,
       "past_winners": [
         {
           "name": "재단법인서울의과학연구소 하나로리더스의원",
@@ -1583,6 +1868,8 @@
       "last_price_est": 1467572000.0,
       "last_winner_rate": 99.487,
       "last_bid_date": "2025-06-20",
+      "last_winner_name": "21세기영상의학과의원",
+      "last_winner_amount": 1460043356.0,
       "past_winners": [
         {
           "name": "21세기영상의학과의원",
@@ -1905,6 +2192,8 @@
       "last_price_est": 978000000.0,
       "last_winner_rate": null,
       "last_bid_date": "2026-02-27",
+      "last_winner_name": null,
+      "last_winner_amount": null,
       "past_winners": [],
       "forecast": {
         "date": "2026-05-24",
@@ -2183,6 +2472,8 @@
       "last_price_est": 1.0,
       "last_winner_rate": 95.895,
       "last_bid_date": "2021-05-28",
+      "last_winner_name": "대한의료영상의학과의원",
+      "last_winner_amount": 843279000.0,
       "past_winners": [
         {
           "name": "대한의료영상의학과의원",
@@ -2446,6 +2737,8 @@
       "last_price_est": 0.0,
       "last_winner_rate": null,
       "last_bid_date": "2023-05-18",
+      "last_winner_name": null,
+      "last_winner_amount": null,
       "past_winners": [],
       "forecast": {
         "date": "2026-05-18",
@@ -2649,6 +2942,8 @@
       "last_price_est": 80000000.0,
       "last_winner_rate": 89.384,
       "last_bid_date": "2020-05-18",
+      "last_winner_name": "한국영상의원",
+      "last_winner_amount": 71507200.0,
       "past_winners": [
         {
           "name": "한국영상의원",
@@ -2839,6 +3134,8 @@
       "last_price_est": 611000000.0,
       "last_winner_rate": null,
       "last_bid_date": "2022-05-18",
+      "last_winner_name": null,
+      "last_winner_amount": null,
       "past_winners": [],
       "forecast": {
         "date": "2026-05-18",
